@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE suite SYSTEM "https://testing.org/testng-1.0.dtd">
+<suite name="Reg_Suite">
+    <test name="TestClassesExecute">
+        <classes>
+            <class name="com.orangeHRMTests.LoginPageTest"/>
+            <!--<class name="com.orangeHRMTests.DashboardPageTest"/>
+            <class name="com.orangeHRMTests.PIMPageTest"/>
+            <class name="com.orangeHRMTests.AddEmployeePageTest"/>
+            <class name="com.orangeHRMTests.EmployeeListPageTest"/>
+            <class name="com.orangeHRMTests.ForgotPasswordPageTest"/>-->
+        </classes>
+    </test>
+</suite>
