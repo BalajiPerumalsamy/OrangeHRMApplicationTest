@@ -14,8 +14,8 @@ public class ExcelUtils
         Object[][] data=null;
         try
         {
-            FileInputStream fis=new FileInputStream(filePath);
-            Workbook workbook=new XSSFWorkbook(fis);
+            FileInputStream input=new FileInputStream(filePath);
+            Workbook workbook=new XSSFWorkbook(input);
             Sheet sheet=workbook.getSheet(sheetName);
             int rows=sheet.getPhysicalNumberOfRows();
             int cols=sheet.getRow(0).getLastCellNum();
