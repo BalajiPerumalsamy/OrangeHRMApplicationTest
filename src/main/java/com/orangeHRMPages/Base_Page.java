@@ -5,6 +5,7 @@ import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
+import org.openqa.selenium.JavascriptExecutor;
 
 import java.io.FileInputStream;
 import java.io.IOException;
@@ -16,15 +17,18 @@ public class Base_Page
     public static WebDriver driver;
     public WebDriverWait wait;
     public Properties properties;
+    public JavascriptExecutor js;
 
     public Base_Page()
     {
         String fPath="C://Users//ELCOT//IdeaProjects//Selenium_Maven//src//main//java//com//orangeHRMPages//Input_Data";
         properties=new Properties();
+        js = (JavascriptExecutor) driver;
         wait=new WebDriverWait(driver,Duration.ofSeconds(30));
         try
         {
-            properties.load(new FileInputStream(fPath));
+            FileInputStream fileInput=new FileInputStream(fPath);
+            properties.load(fileInput);
         }
         catch(IOException e)
         {
