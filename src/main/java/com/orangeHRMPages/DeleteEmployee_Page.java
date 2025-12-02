@@ -30,6 +30,7 @@ package com.orangeHRMPages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class DeleteEmployee_Page extends Base_Page
 {
@@ -39,24 +40,40 @@ public class DeleteEmployee_Page extends Base_Page
         PageFactory.initElements(driver,this);
     }
 
-    // Select first employee checkbox
-    @FindBy(xpath="//div[@class='oxd-table-card']//i")
-    WebElement selectEmployee;
+    //All Employee data delete that time use this
+    @FindBy(xpath="//div[@class='oxd-checkbox-wrapper']/label")
+    WebElement selectAllEmployee;
 
-    // Delete button above the table
-    @FindBy(xpath="//button[@class='oxd-button oxd-button--medium oxd-button--label-danger orangehrm-horizontal-margin']")
-    WebElement deleteButton;
+    @FindBy(xpath="//button[contains(@class,'label-danger')]")
+    WebElement clickDelete;
 
-    // Popup confirm
+    //Specific Employee Data delete that time use this
+    @FindBy(xpath="//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[2]/div[3]/div/div[2]/div[1]/div/div[9]/div/button[2]/i")
+    WebElement deleteEmployee;
+
     @FindBy(xpath="//button[normalize-space()='Yes, Delete']")
     WebElement confirmDeleteButton;
 
+    @FindBy(xpath="//p[contains(@class,'oxd-text--toast-message')]")
+    WebElement message;
+
     public void delete()
     {
-        js.executeScript("arguments[0].scrollIntoView(true);", selectEmployee);
-
-        clickButton(selectEmployee);
-        clickButton(deleteButton);
+        clickButton(deleteEmployee);
+        //clickButton(selectAllEmployee);
+        //clickButton(clickDelete);
+        wait.until(ExpectedConditions.visibilityOf(confirmDeleteButton));
         clickButton(confirmDeleteButton);
+    }
+
+    public String actualOutput()
+    {
+        wait.until(ExpectedConditions.visibilityOf(message));
+        return message.getText();
+    }
+
+    public String expectedOutput()
+    {
+        return "Successfully Deleted";
     }
 }
