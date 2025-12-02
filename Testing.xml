@@ -4,7 +4,6 @@
     <test name="TestClassesExecute">
         <classes>
             <class name="com.orangeHRMTests.AddEmployeePageTest"/>
-            <class name="com.orangeHRMTests.DeleteEmployeePageTest"/>
             <!--
             <class name="com.orangeHRMTests.LoginPageTest"/>
             <class name="com.orangeHRMTests.DashboardPageTest"/>
@@ -12,6 +11,7 @@
             <class name="com.orangeHRMTests.AddEmployeePageTest"/>
             <class name="com.orangeHRMTests.EmployeeListPageTest"/>
             <class name="com.orangeHRMTests.ForgotPasswordPageTest"/>
+            <class name="com.orangeHRMTests.DeleteEmployeePageTest"/>
             -->
         </classes>
     </test>
