@@ -8,7 +8,7 @@ import org.testng.annotations.DataProvider;
 import org.testng.annotations.Test;
 
 public class AddEmployeePageTest
-{
+ {
     public Base_Page basePage;
     public Login_Page loginPage;
     public Dashboard_Page dashboardPage;
@@ -36,9 +36,9 @@ public class AddEmployeePageTest
     }
 
     @Test(dataProvider="excelData")
-    public void verifyAddEmployee(String firstName, String lastName)
+    public void verifyAddEmployee(String firstName, String lastName,String licenceNum,String licenceExpDate,String dofBirth)
     {
-        addEmployeePage.AddEmployee(firstName,lastName);
+        addEmployeePage.AddEmployee(firstName,lastName,licenceNum,licenceExpDate,dofBirth);
     }
     @AfterMethod
     public void tearDown()
