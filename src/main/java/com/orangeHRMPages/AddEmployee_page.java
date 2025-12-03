@@ -46,15 +46,22 @@ public class AddEmployee_page extends Base_Page
     @FindBy(xpath="//label[text()='Male']/span")
     WebElement gender;
 
-    @FindBy(xpath="//p[contains(text(),'Successfully Updated')]")
-    WebElement message;
+    @FindBy(xpath="//p[contains(@class,'oxd-text--toast-message')]")
+    WebElement message1;
+
+    @FindBy(xpath="//p[contains(@class,'oxd-text--toast-message')]")
+    WebElement message2;
+
+    String firstMessage;
+    String secondMessage;
 
     public void AddEmployee(String firstName, String lastName,String licenceNum,String licenceExpDate,String dofBirth)
     {
         writeText(firstName,firstname);
         writeText(lastName,lastname);
         clickButton(saveButton);
-
+        wait.until(ExpectedConditions.visibilityOf(message1));
+        firstMessage=message1.getText();
         writeText(licenceNum,licenceNumber);
         writeText(licenceExpDate,licenceExpiryDate);
 
@@ -69,7 +76,28 @@ public class AddEmployee_page extends Base_Page
         writeText(dofBirth,dateOfBirth);
         clickButton(gender);
         clickButton(saveButton);
-        wait.until(ExpectedConditions.visibilityOf(message));
-        System.out.println("Message = "+message.getText());
+
+        wait.until(ExpectedConditions.visibilityOf(message2));
+        secondMessage=message2.getText();
+    }
+
+    public String actualDataSaved()
+    {
+        return firstMessage;
+    }
+
+    public String expectedDataSaved()
+    {
+        return "Successfully Saved";
+    }
+
+    public String actualDataUpdated()
+    {
+        return secondMessage;
+    }
+
+    public String expectedDataUpdated()
+    {
+        return "Successfully Updated";
     }
 }

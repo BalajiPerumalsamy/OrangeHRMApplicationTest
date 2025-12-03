@@ -11,22 +11,55 @@ public class PIM_Page extends Base_Page
         super();
         PageFactory.initElements(driver,this);
     }
+
     @FindBy(xpath="//a[text()='Add Employee']")
     WebElement addEmp;
+
     @FindBy(xpath="//a[text()='Employee List']")
     WebElement empList;
+
     @FindBy(xpath="//a[text()='Reports']")
     WebElement report;
+
+    @FindBy(xpath="//h6[text()='Add Employee']")
+    WebElement addEmployee;
+
+    @FindBy(xpath="//h5[text()='Employee Information']")
+    WebElement employeeList;
+
     public void navigateToAddEmployee()
     {
         clickButton(addEmp);
+        System.out.println(addEmployee.getText());
     }
+
     public void navigateToEmployeeList()
     {
         clickButton(empList);
     }
+
     public void navigateToReport()
     {
         clickButton(report);
+    }
+
+    public String actualAddEmployee()
+    {
+        return addEmployee.getText();
+    }
+
+    public String expectedAddEmployee()
+    {
+        return "Add Employee";
+    }
+
+    public String actualEmployeeList()
+    {
+        return employeeList.getText();
+    }
+
+    public String expectedEmployeeList()
+    {
+        return "Employee Information";
     }
 }
