@@ -31,14 +31,15 @@ public class EmployeeListPageTest
     public void verifyEmployeeList()
     {
         employeeList.clickSearchButton();
+        Assert.assertEquals(pimPage.actualEmployeeList(),pimPage.expectedEmployeeList(),"Couldn't navigate to Employee list page");
+        Assert.assertEquals(employeeList.actualOutput(),employeeList.expectedOutput(),"No employee record found");
     }
     @AfterMethod
     public void tearDown()
     {
         try
         {
-            Assert.assertEquals(pimPage.actualEmployeeList(),pimPage.expectedEmployeeList(),"Actual and Expected Output is mismatch");
-            Thread.sleep(15000);
+            Thread.sleep(10000);
             basePage.quit();
         }
         catch(InterruptedException e)
