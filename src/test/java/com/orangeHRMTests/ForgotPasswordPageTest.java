@@ -2,6 +2,7 @@ package com.orangeHRMTests;
 
 import com.orangeHRMPages.Base_Page;
 import com.orangeHRMPages.ForgotPassword_Page;
+import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Test;
@@ -22,13 +23,14 @@ public class ForgotPasswordPageTest
     public void verifyForgotPassword()
     {
         forgotPasswordPage.passwordReset();
+        Assert.assertEquals(forgotPasswordPage.actualOutput(),forgotPasswordPage.expectedOutput(),"Couldn't Reset password");
     }
     @AfterMethod
     public void tearDown()
     {
         try
         {
-            Thread.sleep(15000);
+            Thread.sleep(10000);
             basePage.quit();
         }
         catch(InterruptedException e)
