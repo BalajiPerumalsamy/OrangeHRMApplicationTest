@@ -27,10 +27,12 @@ public class PIM_Page extends Base_Page
     @FindBy(xpath="//h5[text()='Employee Information']")
     WebElement employeeList;
 
+    @FindBy(xpath="//h5[text()='Employee Reports']")
+    WebElement employeeReport;
+
     public void navigateToAddEmployee()
     {
         clickButton(addEmp);
-        System.out.println(addEmployee.getText());
     }
 
     public void navigateToEmployeeList()
@@ -61,5 +63,15 @@ public class PIM_Page extends Base_Page
     public String expectedEmployeeList()
     {
         return "Employee Information";
+    }
+
+    public String actualEmployeeReport()
+    {
+        return employeeReport.getText();
+    }
+
+    public String expectedEmployeeReport()
+    {
+        return "Employee Reports";
     }
 }
