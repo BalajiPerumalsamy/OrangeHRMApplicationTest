@@ -27,13 +27,13 @@ public class DashboardPageTest
     public void verifyPIM()
     {
         dashboardPage.navigateToPIM();
+        Assert.assertEquals(dashboardPage.actualOutput(),dashboardPage.ExpectedOutput(),"Couldn't navigate to PIM page");
     }
     @AfterMethod
     public void tearDown()
     {
         try
         {
-            Assert.assertEquals(dashboardPage.actualOutput(),dashboardPage.ExpectedOutput(),"Actual and  Expected output is mismatch");
             Thread.sleep(10000);
             basePage.quit();
         }
