@@ -1,30 +1,3 @@
-/*
-package com.orangeHRMPages;
-
-import org.openqa.selenium.WebElement;
-import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.PageFactory;
-
-public class DeleteEmployee_Page extends Base_Page
-{
-    public DeleteEmployee_Page()
-    {
-        super();
-        PageFactory.initElements(driver,this);
-    }
-    @FindBy(xpath="//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[2]/div[3]/div/div[2]/div/div/div[1]/div/div/label/span/i")
-    WebElement selectEmployee;
-    @FindBy(xpath="//*[@id=\"app\"]/div[1]/div[2]/div[2]/div/div[2]/div[2]/div/div/button")
-    WebElement deleteButton;
-    public void delete()
-    {
-        clickButton(selectEmployee);
-        clickButton(deleteButton);
-    }
-}
-*/
-
-
 package com.orangeHRMPages;
 
 import org.openqa.selenium.WebElement;
