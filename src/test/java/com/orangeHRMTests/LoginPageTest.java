@@ -16,19 +16,19 @@ public class LoginPageTest
     {
         basePage=new Base_Page();
         basePage.navigateToApplication();
-        loginPage=new Login_Page();
     }
     @Test
     public void verifyLogin()
     {
+        loginPage=new Login_Page();
         loginPage.login();
+        Assert.assertEquals(loginPage.actualOutput(),loginPage.expectedOutput(),"Couldn't navigate to Dashboard page");
     }
     @AfterMethod
     public void tearDown()
     {
         try
         {
-            Assert.assertEquals(loginPage.actualOutput(),loginPage.expectedOutput(),"Actual and Expected output is mismatch");
             Thread.sleep(10000);
             basePage.quit();
         }
