@@ -12,7 +12,7 @@ public class DeleteEmployeePageTest
     Login_Page loginPage;
     Dashboard_Page dashboardPage;
     PIM_Page pimPage;
-    AddEmployee_page addEmployeePage;
+    AddEmployee_Page addEmployeePage;
     EmployeeList_Page employeeListPage;
     DeleteEmployee_Page deleteEmployeePage;
 
@@ -35,13 +35,13 @@ public class DeleteEmployeePageTest
     {
         deleteEmployeePage=new DeleteEmployee_Page();
         deleteEmployeePage.delete();
+        Assert.assertEquals(deleteEmployeePage.actualOutput(),deleteEmployeePage.expectedOutput(),"Couldn't Delete user data");
     }
     @AfterMethod
     public void tearDown()
     {
         try
         {
-            Assert.assertEquals(deleteEmployeePage.actualOutput(),deleteEmployeePage.expectedOutput(),"Actual and Expected output is mismatch");
             Thread.sleep(15000);
             basePage.quit();
         }
