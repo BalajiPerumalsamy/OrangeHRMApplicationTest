@@ -5,9 +5,9 @@ import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class AddEmployee_page extends Base_Page
+public class AddEmployee_Page extends Base_Page
 {
-    public AddEmployee_page()
+    public AddEmployee_Page()
     {
         super();
         PageFactory.initElements(driver,this);
@@ -62,6 +62,7 @@ public class AddEmployee_page extends Base_Page
         clickButton(saveButton);
         wait.until(ExpectedConditions.visibilityOf(message1));
         firstMessage=message1.getText();
+
         writeText(licenceNum,licenceNumber);
         writeText(licenceExpDate,licenceExpiryDate);
 
