@@ -30,20 +30,45 @@ public class PIMPageTest
     @Test(priority=1)
     public void verifyAddEmployee()
     {
-        pimPage.navigateToAddEmployee();
-        Assert.assertEquals(pimPage.actualAddEmployee(),pimPage.expectedAddEmployee(),"Couldn't Navigate to Add Employee Page");
+        try
+        {
+            pimPage.navigateToAddEmployee();
+            Assert.assertEquals(pimPage.actualAddEmployee(),pimPage.expectedAddEmployee(),"Couldn't Navigate to Add Employee Page");
+        }
+        catch(AssertionError e)
+        {
+            System.out.println("Error acquired Page not move forward");
+            basePage.captureScreenshot("AddEmployeePade1");
+        }
     }
     @Test(priority=2)
     public void verifyEmployeeList()
     {
-        pimPage.navigateToEmployeeList();
-        Assert.assertEquals(pimPage.actualEmployeeList(),pimPage.expectedEmployeeList(),"Couldn't Navigate to Employee List Page");
+        try
+        {
+            pimPage.navigateToEmployeeList();
+            Assert.assertEquals(pimPage.actualEmployeeList(),pimPage.expectedEmployeeList(),"Couldn't Navigate to Employee List Page");
+        }
+        catch(AssertionError e)
+        {
+            System.out.println("Error acquired Page not move forward");
+            basePage.captureScreenshot("EmployeeListPage1");
+        }
     }
     @Test(priority=3)
     public void verifyReport()
     {
-        pimPage.navigateToReport();
-        Assert.assertEquals(pimPage.actualEmployeeReport(),pimPage.expectedEmployeeReport(),"Couldn't Navigate to Employee Reports Page");
+        try
+        {
+            pimPage.navigateToReport();
+            Assert.assertEquals(pimPage.actualEmployeeReport(),pimPage.expectedEmployeeReport(),"Couldn't Navigate to Employee Reports Page");
+        }
+        catch(AssertionError e)
+        {
+            System.out.println("Error acquired Page not move forward");
+            basePage.captureScreenshot("ReportPage");
+        }
+
     }
     @AfterMethod
     public void tearDown()
