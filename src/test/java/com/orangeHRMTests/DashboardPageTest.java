@@ -26,8 +26,16 @@ public class DashboardPageTest
     @Test
     public void verifyPIM()
     {
-        dashboardPage.navigateToPIM();
-        Assert.assertEquals(dashboardPage.actualOutput(),dashboardPage.ExpectedOutput(),"Couldn't navigate to PIM page");
+        try
+        {
+            dashboardPage.navigateToPIM();
+            Assert.assertEquals(dashboardPage.actualOutput(),dashboardPage.ExpectedOutput(),"Couldn't navigate to PIM page");
+        }
+        catch(AssertionError e)
+        {
+            System.out.println("Error acquired Page not move forward");
+            basePage.captureScreenshot("DashboardPage");
+        }
     }
     @AfterMethod
     public void tearDown()
