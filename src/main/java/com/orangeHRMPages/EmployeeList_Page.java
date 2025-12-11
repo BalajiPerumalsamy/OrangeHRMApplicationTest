@@ -1,6 +1,7 @@
 package com.orangeHRMPages;
 
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.interactions.Actions;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
@@ -21,7 +22,7 @@ public class EmployeeList_Page extends Base_Page
     @FindBy(xpath="//button[@type='submit']")
     WebElement search;
 
-    @FindBy(xpath="//span[contains(normalize-space(),'Record Found')]")
+    @FindBy(xpath="//span[text()='No Records Found' or text()='(1) Record Found' ]")
     WebElement recordFound;
 
     public void clickSearchButton()
@@ -29,6 +30,8 @@ public class EmployeeList_Page extends Base_Page
         writeText(properties.getProperty("empName"),empName);
         writeText(properties.getProperty("empID"),empID);
         clickButton(search);
+        Actions act=new Actions(driver);
+        act.scrollByAmount(0,500).perform();
     }
 
     public String actualOutput()
