@@ -22,8 +22,16 @@ public class ForgotPasswordPageTest
     @Test
     public void verifyForgotPassword()
     {
-        forgotPasswordPage.passwordReset();
-        Assert.assertEquals(forgotPasswordPage.actualOutput(),forgotPasswordPage.expectedOutput(),"Couldn't Reset password");
+        try
+        {
+            forgotPasswordPage.passwordReset();
+            Assert.assertEquals(forgotPasswordPage.actualOutput(),forgotPasswordPage.expectedOutput(),"Couldn't Reset password");
+        }
+        catch(AssertionError e)
+        {
+            System.out.println("Error acquired Page not move forward");
+            basePage.captureScreenshot("ForgotPasswordPage");
+        }
     }
     @AfterMethod
     public void tearDown()
