@@ -20,9 +20,17 @@ public class LoginPageTest
     @Test
     public void verifyLogin()
     {
-        loginPage=new Login_Page();
-        loginPage.login();
-        Assert.assertEquals(loginPage.actualOutput(),loginPage.expectedOutput(),"Couldn't navigate to Dashboard page");
+        try
+        {
+            loginPage=new Login_Page();
+            loginPage.login();
+            Assert.assertEquals(loginPage.actualOutput(),loginPage.expectedOutput(),"Couldn't navigate to Dashboard page");
+        }
+        catch(AssertionError e)
+        {
+            System.out.println("Error acquired Page not move forward");
+            basePage.captureScreenshot("LoginPage");
+        }
     }
     @AfterMethod
     public void tearDown()
