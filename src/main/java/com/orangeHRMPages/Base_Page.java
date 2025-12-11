@@ -1,11 +1,15 @@
 package com.orangeHRMPages;
 
+import org.openqa.selenium.OutputType;
+import org.openqa.selenium.TakesScreenshot;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.io.FileHandler;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
 
+import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
 import java.time.Duration;
@@ -14,7 +18,7 @@ import java.util.Properties;
 public class Base_Page
 {
     public static WebDriver driver;
-    public WebDriverWait wait;
+    public static WebDriverWait wait;
     public Properties properties;
 
     public Base_Page()
@@ -53,5 +57,20 @@ public class Base_Page
     public void quit()
     {
         driver.quit();
+    }
+    public void captureScreenshot(String fileName)
+    {
+        try
+        {
+            TakesScreenshot screenshot=(TakesScreenshot) driver;
+            File src=screenshot.getScreenshotAs(OutputType.FILE);
+            File file=new File("./Screenshots/"+fileName+".png");
+            FileHandler.copy(src,file);
+        }
+        catch(IOException e)
+        {
+            System.out.println(e);
+        }
+
     }
 }
