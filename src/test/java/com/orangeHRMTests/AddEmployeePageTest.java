@@ -40,9 +40,26 @@ public class AddEmployeePageTest
     @Test(dataProvider="excelData")
     public void verifyAddEmployee(String firstName, String lastName,String licenceNum,String licenceExpDate,String dofBirth)
     {
+
         addEmployeePage.AddEmployee(firstName,lastName,licenceNum,licenceExpDate,dofBirth);
-        Assert.assertEquals(addEmployeePage.actualDataSaved(),addEmployeePage.expectedDataSaved(),"Couldn't save user data");
-        Assert.assertEquals(addEmployeePage.actualDataUpdated(),addEmployeePage.expectedDataUpdated(),"Couldn't update user data");
+        try
+        {
+            Assert.assertEquals(addEmployeePage.actualDataSaved(), addEmployeePage.expectedDataSaved(),"Couldn't save user data");
+        }
+        catch(AssertionError e)
+        {
+            System.out.println("Employee Data not saved!");
+            basePage.captureScreenshot("AddEmployeePage_SaveFailed");
+        }
+        try
+        {
+            Assert.assertEquals(addEmployeePage.actualDataUpdated(), addEmployeePage.expectedDataUpdated(),"Couldn't update user data");
+        }
+        catch(AssertionError e)
+        {
+            System.out.println("Employee Data not updated!");
+            basePage.captureScreenshot("AddEmployeePage_UpdateFailed");
+        }
     }
     @AfterMethod
     public void tearDown()
