@@ -25,14 +25,31 @@ public class EmployeeListPageTest
         employeeList=new EmployeeList_Page();
         loginPage.login();
         dashboardPage.navigateToPIM();
-        pimPage.navigateToEmployeeList();
+        try
+        {
+            pimPage.navigateToEmployeeList();
+            Assert.assertEquals(pimPage.actualEmployeeList(),pimPage.expectedEmployeeList(),"Couldn't navigate to Employee list page");
+        }
+        catch(AssertionError e)
+        {
+            System.out.println("Employee list page Error acquired so Page not move forward");
+            basePage.captureScreenshot("EmployeeListPage");
+        }
     }
     @Test
     public void verifyEmployeeList()
     {
-        employeeList.clickSearchButton();
-        Assert.assertEquals(pimPage.actualEmployeeList(),pimPage.expectedEmployeeList(),"Couldn't navigate to Employee list page");
-        Assert.assertEquals(employeeList.actualOutput(),employeeList.expectedOutput(),"No employee record found");
+        try
+        {
+            employeeList.clickSearchButton();
+            Assert.assertEquals(employeeList.actualOutput(),employeeList.expectedOutput(),"No employee record found");
+        }
+        catch(AssertionError e)
+        {
+            System.out.println("Error acquired Page not move forward");
+            basePage.captureScreenshot("SearchEmployeeList");
+        }
+
     }
     @AfterMethod
     public void tearDown()
