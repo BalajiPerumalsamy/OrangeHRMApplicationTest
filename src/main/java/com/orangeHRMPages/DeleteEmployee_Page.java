@@ -30,6 +30,9 @@ public class DeleteEmployee_Page extends Base_Page
     @FindBy(xpath="//p[contains(@class,'oxd-text--toast-message')]")
     WebElement message;
 
+    @FindBy(xpath="//span[text()='No Records Found' or text()='(1) Record Found' ]")
+    WebElement recordFound;
+
     public void delete()
     {
         clickButton(deleteEmployee);
@@ -48,5 +51,14 @@ public class DeleteEmployee_Page extends Base_Page
     public String expectedOutput()
     {
         return "Successfully Deleted";
+    }
+    public String actualOutputRecord()
+    {
+        return recordFound.getText();
+    }
+
+    public String expectedOutputRecord()
+    {
+        return "(1) Record Found";
     }
 }
