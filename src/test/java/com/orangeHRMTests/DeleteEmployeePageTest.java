@@ -36,7 +36,7 @@ public class DeleteEmployeePageTest
         }
         catch(AssertionError e)
         {
-            System.out.println("Error acquired Page not move forward");
+            System.out.println("Error acquired Delete employee Page not move forward");
             basePage.captureScreenshot("EmployeeNoRecord");
         }
     }

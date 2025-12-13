@@ -28,7 +28,7 @@ public class LoginPageTest
         }
         catch(AssertionError e)
         {
-            System.out.println("Error acquired Page not move forward");
+            System.out.println("Error acquired Login Page not move forward");
             basePage.captureScreenshot("LoginPage");
         }
     }

@@ -33,7 +33,7 @@ public class DashboardPageTest
         }
         catch(AssertionError e)
         {
-            System.out.println("Error acquired Page not move forward");
+            System.out.println("Error acquired Dashboard Page not move forward");
             basePage.captureScreenshot("DashboardPage");
         }
     }

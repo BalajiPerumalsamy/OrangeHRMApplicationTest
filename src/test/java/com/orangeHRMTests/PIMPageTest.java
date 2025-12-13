@@ -37,7 +37,7 @@ public class PIMPageTest
         }
         catch(AssertionError e)
         {
-            System.out.println("Error acquired Page not move forward");
+            System.out.println("Error acquired PIM Page not move forward");
             basePage.captureScreenshot("AddEmployeePade1");
         }
     }
@@ -51,7 +51,7 @@ public class PIMPageTest
         }
         catch(AssertionError e)
         {
-            System.out.println("Error acquired Page not move forward");
+            System.out.println("Error acquired PIM Page not move forward");
             basePage.captureScreenshot("EmployeeListPage1");
         }
     }
@@ -65,7 +65,7 @@ public class PIMPageTest
         }
         catch(AssertionError e)
         {
-            System.out.println("Error acquired Page not move forward");
+            System.out.println("Error acquired PIM Page not move forward");
             basePage.captureScreenshot("ReportPage");
         }
 

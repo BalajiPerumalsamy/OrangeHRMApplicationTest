@@ -46,7 +46,7 @@ public class EmployeeListPageTest
         }
         catch(AssertionError e)
         {
-            System.out.println("Error acquired Page not move forward");
+            System.out.println("Error acquired Employee list Page not move forward");
             basePage.captureScreenshot("SearchEmployeeList");
         }
 
