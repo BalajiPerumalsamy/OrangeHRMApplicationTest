@@ -1,5 +1,6 @@
 package com.orangeHRMTests;
 
+import com.Listeners.MyListener;
 import com.orangeHRMPages.Base_Page;
 import com.orangeHRMPages.Dashboard_Page;
 import com.orangeHRMPages.Login_Page;
@@ -7,8 +8,10 @@ import com.orangeHRMPages.PIM_Page;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners(MyListener.class)
 public class PIMPageTest
 {
     public Base_Page basePage;
@@ -27,49 +30,28 @@ public class PIMPageTest
         loginPage.login();
         dashboardPage.navigateToPIM();
     }
-    @Test(priority=1)
-    public void verifyAddEmployee()
-    {
-        try
-        {
-            pimPage.navigateToAddEmployee();
-            Assert.assertEquals(pimPage.actualAddEmployee(),pimPage.expectedAddEmployee(),"Couldn't Navigate to Add Employee Page");
-        }
-        catch(AssertionError e)
-        {
-            System.out.println("Error acquired PIM Page not move forward");
-            basePage.captureScreenshot("AddEmployeePade1");
-        }
-    }
-    @Test(priority=2)
-    public void verifyEmployeeList()
-    {
-        try
-        {
-            pimPage.navigateToEmployeeList();
-            Assert.assertEquals(pimPage.actualEmployeeList(),pimPage.expectedEmployeeList(),"Couldn't Navigate to Employee List Page");
-        }
-        catch(AssertionError e)
-        {
-            System.out.println("Error acquired PIM Page not move forward");
-            basePage.captureScreenshot("EmployeeListPage1");
-        }
-    }
-    @Test(priority=3)
-    public void verifyReport()
-    {
-        try
-        {
-            pimPage.navigateToReport();
-            Assert.assertEquals(pimPage.actualEmployeeReport(),pimPage.expectedEmployeeReport(),"Couldn't Navigate to Employee Reports Page");
-        }
-        catch(AssertionError e)
-        {
-            System.out.println("Error acquired PIM Page not move forward");
-            basePage.captureScreenshot("ReportPage");
-        }
 
+    @Test(priority=1)
+    public void verifyAddEmployeeNavigate()
+    {
+        pimPage.navigateToAddEmployee();
+        Assert.assertEquals(pimPage.actualAddEmployee(),pimPage.expectedAddEmployee(),"Couldn't Navigate to Add Employee Page");
     }
+
+    @Test(priority=2)
+    public void verifyEmployeeListNavigate()
+    {
+        pimPage.navigateToEmployeeList();
+        Assert.assertEquals(pimPage.actualEmployeeList(),pimPage.expectedEmployeeList(),"Couldn't Navigate to Employee List Page");
+    }
+
+    @Test(priority=3)
+    public void verifyReportNavigate()
+    {
+        pimPage.navigateToReport();
+        Assert.assertEquals(pimPage.actualEmployeeReport(),pimPage.expectedEmployeeReport(),"Couldn't Navigate to Employee Reports Page");
+    }
+
     @AfterMethod
     public void tearDown()
     {
