@@ -1,13 +1,12 @@
 package com.orangeHRMTests;
 
+import com.Listeners.MyListener;
 import com.orangeHRMPages.*;
 import com.utils.ExcelUtils;
 import org.testng.Assert;
-import org.testng.annotations.AfterMethod;
-import org.testng.annotations.BeforeMethod;
-import org.testng.annotations.DataProvider;
-import org.testng.annotations.Test;
+import org.testng.annotations.*;
 
+@Listeners(MyListener.class)
 public class AddEmployeePageTest
  {
     public Base_Page basePage;
@@ -30,6 +29,7 @@ public class AddEmployeePageTest
         pimPage.navigateToAddEmployee();
         Assert.assertEquals(pimPage.actualAddEmployee(),pimPage.expectedAddEmployee(),"Couldn't navigate to Add Employee page");
     }
+
     @DataProvider(name="excelData")
     public Object[][] getEmployeeData()
     {
@@ -38,29 +38,13 @@ public class AddEmployeePageTest
     }
 
     @Test(dataProvider="excelData")
-    public void verifyAddEmployee(String firstName, String lastName,String licenceNum,String licenceExpDate,String dofBirth)
+    public void verifyAddEmployeeData(String firstName, String lastName,String licenceNum,String licenceExpDate,String dofBirth)
     {
-
         addEmployeePage.AddEmployee(firstName,lastName,licenceNum,licenceExpDate,dofBirth);
-        try
-        {
-            Assert.assertEquals(addEmployeePage.actualDataSaved(), addEmployeePage.expectedDataSaved(),"Couldn't save user data");
-        }
-        catch(AssertionError e)
-        {
-            System.out.println("Employee Data not saved!");
-            basePage.captureScreenshot("AddEmployeePage_SaveFailed");
-        }
-        try
-        {
-            Assert.assertEquals(addEmployeePage.actualDataUpdated(), addEmployeePage.expectedDataUpdated(),"Couldn't update user data");
-        }
-        catch(AssertionError e)
-        {
-            System.out.println("Employee Data not updated!");
-            basePage.captureScreenshot("AddEmployeePage_UpdateFailed");
-        }
+        Assert.assertEquals(addEmployeePage.actualDataSaved(), addEmployeePage.expectedDataSaved(),"Couldn't save user data");
+        Assert.assertEquals(addEmployeePage.actualDataUpdated(), addEmployeePage.expectedDataUpdated(),"Couldn't update user data");
     }
+
     @AfterMethod
     public void tearDown()
     {
