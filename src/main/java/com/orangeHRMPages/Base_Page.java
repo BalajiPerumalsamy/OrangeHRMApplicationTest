@@ -58,19 +58,20 @@ public class Base_Page
     {
         driver.quit();
     }
-    public void captureScreenshot(String fileName)
+    public String captureScreenshot(String testName)
     {
+        String path = "screenshots/" + testName + ".png";
         try
         {
             TakesScreenshot screenshot=(TakesScreenshot) driver;
             File src=screenshot.getScreenshotAs(OutputType.FILE);
-            File file=new File("./Screenshots/"+fileName+".png");
+            File file=new File(path);
             FileHandler.copy(src,file);
         }
         catch(IOException e)
         {
             System.out.println(e);
         }
-
+        return path;
     }
 }
