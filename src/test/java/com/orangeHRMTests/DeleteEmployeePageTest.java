@@ -1,11 +1,14 @@
 package com.orangeHRMTests;
 
+import com.Listeners.MyListener;
 import com.orangeHRMPages.*;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners(MyListener.class)
 public class DeleteEmployeePageTest
 {
     Base_Page basePage;
@@ -29,32 +32,18 @@ public class DeleteEmployeePageTest
         pimPage.navigateToEmployeeList();
         employeeListPage=new EmployeeList_Page();
         deleteEmployeePage=new DeleteEmployee_Page();
-        try
-        {
-            employeeListPage.clickSearchButton();
-            Assert.assertEquals(deleteEmployeePage.actualOutputRecord(),deleteEmployeePage.expectedOutputRecord(),"No employee record found");
-        }
-        catch(AssertionError e)
-        {
-            System.out.println("Error acquired Delete employee Page not move forward");
-            basePage.captureScreenshot("EmployeeNoRecord");
-        }
+        employeeListPage.clickSearchButton();
+        Assert.assertEquals(deleteEmployeePage.actualOutputRecord(),deleteEmployeePage.expectedOutputRecord(),"No employee record found");
     }
+
     @Test
-    public void verifyDelete()
+    public void verifyDeleteEmployee()
     {
-        try
-        {
-            deleteEmployeePage.delete();
-            Assert.assertEquals(deleteEmployeePage.actualOutput(),deleteEmployeePage.expectedOutput(),"Couldn't Delete user data");
-        }
-        catch(AssertionError e)
-        {
-            System.out.println("Error acquired Page not move forward");
-            basePage.captureScreenshot("DeletePage");
-        }
+        deleteEmployeePage.delete();
+        Assert.assertEquals(deleteEmployeePage.actualOutput(),deleteEmployeePage.expectedOutput(),"Couldn't Delete user data");
     }
-    @AfterMethod
+
+    @AfterMethod(alwaysRun=true)
     public void tearDown()
     {
         try
