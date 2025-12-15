@@ -1,11 +1,14 @@
 package com.orangeHRMTests;
 
+import com.Listeners.MyListener;
 import com.orangeHRMPages.*;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
 import org.testng.annotations.BeforeMethod;
+import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+@Listeners(MyListener.class)
 public class EmployeeListPageTest
 {
     public Base_Page basePage;
@@ -25,32 +28,17 @@ public class EmployeeListPageTest
         employeeList=new EmployeeList_Page();
         loginPage.login();
         dashboardPage.navigateToPIM();
-        try
-        {
-            pimPage.navigateToEmployeeList();
-            Assert.assertEquals(pimPage.actualEmployeeList(),pimPage.expectedEmployeeList(),"Couldn't navigate to Employee list page");
-        }
-        catch(AssertionError e)
-        {
-            System.out.println("Employee list page Error acquired so Page not move forward");
-            basePage.captureScreenshot("EmployeeListPage");
-        }
+        pimPage.navigateToEmployeeList();
+        Assert.assertEquals(pimPage.actualEmployeeList(),pimPage.expectedEmployeeList(),"Couldn't navigate to Employee list page");
     }
-    @Test
-    public void verifyEmployeeList()
-    {
-        try
-        {
-            employeeList.clickSearchButton();
-            Assert.assertEquals(employeeList.actualOutput(),employeeList.expectedOutput(),"No employee record found");
-        }
-        catch(AssertionError e)
-        {
-            System.out.println("Error acquired Employee list Page not move forward");
-            basePage.captureScreenshot("SearchEmployeeList");
-        }
 
+    @Test
+    public void verifySearchEmployee()
+    {
+        employeeList.clickSearchButton();
+        Assert.assertEquals(employeeList.actualOutput(),employeeList.expectedOutput(),"No employee record found");
     }
+
     @AfterMethod
     public void tearDown()
     {
