@@ -16,6 +16,8 @@ public class ReportManager
 
         extent = new ExtentReports();
         extent.attachReporter(reporter);
+        extent.setSystemInfo("Tester", "Balaji");
+        extent.setSystemInfo("Browser", "Chrome");
 
         return extent;
     }
