@@ -26,6 +26,7 @@ public class DashboardPageTest
         loginPage.login();
         dashboardPage=new Dashboard_Page();
     }
+
     @Test
     public void verifyPIMPage()
     {
