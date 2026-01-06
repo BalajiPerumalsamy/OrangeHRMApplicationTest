@@ -6,6 +6,8 @@ import com.utils.ExcelUtils;
 import org.testng.Assert;
 import org.testng.annotations.*;
 
+import java.util.Properties;
+
 @Listeners(MyListener.class)
 public class AddEmployeePageTest
  {
@@ -14,6 +16,7 @@ public class AddEmployeePageTest
     public Dashboard_Page dashboardPage;
     public PIM_Page pimPage;
     public AddEmployee_Page addEmployeePage;
+    public Properties properties;
 
     @BeforeMethod
     public void setUp()
@@ -24,7 +27,8 @@ public class AddEmployeePageTest
         dashboardPage=new Dashboard_Page();
         pimPage=new PIM_Page();
         addEmployeePage=new AddEmployee_Page();
-        loginPage.login();
+        properties=new Properties();
+        loginPage.login(basePage.properties.getProperty("userName"),basePage.properties.getProperty("password"));
         dashboardPage.navigateToPIM();
         pimPage.navigateToAddEmployee();
         Assert.assertEquals(pimPage.actualAddEmployee(),pimPage.expectedAddEmployee(),"Couldn't navigate to Add Employee page");
