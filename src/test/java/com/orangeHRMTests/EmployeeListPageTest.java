@@ -8,6 +8,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import java.util.Properties;
+
 @Listeners(MyListener.class)
 public class EmployeeListPageTest
 {
@@ -16,6 +18,7 @@ public class EmployeeListPageTest
     public Dashboard_Page dashboardPage;
     public PIM_Page pimPage;
     public EmployeeList_Page employeeList;
+    public Properties properties;
 
     @BeforeMethod
     public void setUp()
@@ -26,7 +29,8 @@ public class EmployeeListPageTest
         dashboardPage=new Dashboard_Page();
         pimPage=new PIM_Page();
         employeeList=new EmployeeList_Page();
-        loginPage.login();
+        properties=new Properties();
+        loginPage.login(basePage.properties.getProperty("userName"),basePage.properties.getProperty("password"));
         dashboardPage.navigateToPIM();
         pimPage.navigateToEmployeeList();
         Assert.assertEquals(pimPage.actualEmployeeList(),pimPage.expectedEmployeeList(),"Couldn't navigate to Employee list page");
@@ -35,7 +39,7 @@ public class EmployeeListPageTest
     @Test
     public void verifySearchEmployee()
     {
-        employeeList.clickSearchButton();
+        employeeList.clickSearchButton(basePage.properties.getProperty("empName"),basePage.properties.getProperty("empID"));
         Assert.assertEquals(employeeList.actualOutput(),employeeList.expectedOutput(),"No employee record found");
     }
 
