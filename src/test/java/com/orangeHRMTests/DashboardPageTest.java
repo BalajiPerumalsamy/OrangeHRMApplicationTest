@@ -10,12 +10,15 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import java.util.Properties;
+
 @Listeners(MyListener.class)
 public class DashboardPageTest
 {
     public Base_Page basePage;
     public Login_Page loginPage;
     public Dashboard_Page dashboardPage;
+    public Properties properties;
 
     @BeforeMethod
     public void setUp()
@@ -23,7 +26,8 @@ public class DashboardPageTest
         basePage=new Base_Page();
         basePage.navigateToApplication();
         loginPage=new Login_Page();
-        loginPage.login();
+        properties=new Properties();
+        loginPage.login(basePage.properties.getProperty("userName"),basePage.properties.getProperty("password"));
         dashboardPage=new Dashboard_Page();
     }
 
