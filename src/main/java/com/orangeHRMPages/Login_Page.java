@@ -24,10 +24,13 @@ public class Login_Page extends Base_Page
     @FindBy(xpath="//h6[text()='Dashboard']")
     WebElement verifyLoginFunction;
 
-    public void login()
+    @FindBy(xpath="//*[@id=\"app\"]/div[1]/div/div[1]/div/div[2]/div[2]/div/div[1]/div[1]/p")
+    WebElement invalidLoginFunction;
+
+    public void login(String name,String pass)
     {
-        writeText(properties.getProperty("userName"),userName);
-        writeText(properties.getProperty("password"),password);
+        writeText(name,userName);
+        writeText(pass,password);
         clickButton(loginButton);
     }
 
@@ -40,4 +43,15 @@ public class Login_Page extends Base_Page
     {
         return "Dashboard";
     }
+
+    public String invalidActualOutput()
+    {
+        return invalidLoginFunction.getText();
+    }
+
+    public String invalidExpectedOutput()
+    {
+        return "Invalid credentials";
+    }
+
 }
