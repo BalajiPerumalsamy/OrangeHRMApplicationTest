@@ -8,6 +8,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import java.util.Properties;
+
 @Listeners(MyListener.class)
 public class DeleteEmployeePageTest
 {
@@ -18,6 +20,7 @@ public class DeleteEmployeePageTest
     AddEmployee_Page addEmployeePage;
     EmployeeList_Page employeeListPage;
     DeleteEmployee_Page deleteEmployeePage;
+    public Properties properties;
 
     @BeforeMethod
     public void setUp()
@@ -25,14 +28,15 @@ public class DeleteEmployeePageTest
         basePage=new Base_Page();
         basePage.navigateToApplication();
         loginPage=new Login_Page();
-        loginPage.login();
+        properties=new Properties();
+        loginPage.login(basePage.properties.getProperty("userName"),basePage.properties.getProperty("password"));
         dashboardPage=new Dashboard_Page();
         dashboardPage.navigateToPIM();
         pimPage=new PIM_Page();
         pimPage.navigateToEmployeeList();
         employeeListPage=new EmployeeList_Page();
         deleteEmployeePage=new DeleteEmployee_Page();
-        employeeListPage.clickSearchButton();
+        employeeListPage.clickSearchButton(basePage.properties.getProperty("empName"),basePage.properties.getProperty("empID"));
         Assert.assertEquals(deleteEmployeePage.actualOutputRecord(),deleteEmployeePage.expectedOutputRecord(),"No employee record found");
     }
 
