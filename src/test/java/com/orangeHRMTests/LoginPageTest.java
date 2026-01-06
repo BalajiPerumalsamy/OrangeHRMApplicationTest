@@ -9,11 +9,14 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import java.util.Properties;
+
 @Listeners(MyListener.class)
 public class LoginPageTest
 {
     public Base_Page basePage;
     public Login_Page loginPage;
+    public Properties properties;
     @BeforeMethod
     public void setUp()
     {
@@ -25,7 +28,8 @@ public class LoginPageTest
     public void verifyLogin()
     {
         loginPage=new Login_Page();
-        loginPage.login();
+        properties=new Properties();
+        loginPage.login(basePage.properties.getProperty("userName"), basePage.properties.getProperty("password"));
         Assert.assertEquals(loginPage.actualOutput(),loginPage.expectedOutput(),"Couldn't navigate to Dashboard page");
     }
 
