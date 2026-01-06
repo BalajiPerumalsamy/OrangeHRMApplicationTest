@@ -26,10 +26,10 @@ public class ForgotPassword_Page extends Base_Page
     @FindBy(xpath="//h6[text()='Reset Password link sent successfully']")
     WebElement verifyResetPassword;
 
-    public void passwordReset()
+    public void passwordReset(String name)
     {
         clickButton(forgotPassword);
-        writeText(properties.getProperty("userName"),userName);
+        writeText(name,userName);
         clickButton(submit);
     }
 
