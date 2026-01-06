@@ -25,10 +25,10 @@ public class EmployeeList_Page extends Base_Page
     @FindBy(xpath="//span[text()='No Records Found' or text()='(1) Record Found' ]")
     WebElement recordFound;
 
-    public void clickSearchButton()
+    public void clickSearchButton(String name,String id)
     {
-        writeText(properties.getProperty("empName"),empName);
-        writeText(properties.getProperty("empID"),empID);
+        writeText(name,empName);
+        writeText(id,empID);
         clickButton(search);
         Actions act=new Actions(driver);
         act.scrollByAmount(0,500).perform();
