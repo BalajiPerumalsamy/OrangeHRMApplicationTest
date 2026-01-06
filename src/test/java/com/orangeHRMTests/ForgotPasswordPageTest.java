@@ -26,7 +26,7 @@ public class ForgotPasswordPageTest
     @Test
     public void verifyForgotPassword()
     {
-        forgotPasswordPage.passwordReset();
+        forgotPasswordPage.passwordReset(basePage.properties.getProperty("userName"));
         Assert.assertEquals(forgotPasswordPage.actualOutput(),forgotPasswordPage.expectedOutput(),"Couldn't Reset password");
     }
 
