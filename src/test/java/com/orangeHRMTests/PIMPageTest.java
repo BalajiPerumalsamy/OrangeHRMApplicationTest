@@ -11,6 +11,8 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
+import java.util.Properties;
+
 @Listeners(MyListener.class)
 public class PIMPageTest
 {
@@ -18,6 +20,7 @@ public class PIMPageTest
     public Login_Page loginPage;
     public Dashboard_Page dashboardPage;
     public PIM_Page pimPage;
+    public Properties properties;
 
     @BeforeMethod
     public void setUp()
@@ -27,7 +30,8 @@ public class PIMPageTest
         loginPage=new Login_Page();
         dashboardPage=new Dashboard_Page();
         pimPage=new PIM_Page();
-        loginPage.login();
+        properties=new Properties();
+        loginPage.login(basePage.properties.getProperty("userName"),basePage.properties.getProperty("password"));
         dashboardPage.navigateToPIM();
     }
 
