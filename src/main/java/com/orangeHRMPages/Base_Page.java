@@ -21,7 +21,7 @@ public class Base_Page
     public static WebDriverWait wait;
     public Properties properties;
 
-    public Base_Page()
+    public void navigateToApplication()
     {
         String fPath="C://Users//ELCOT//IdeaProjects//Selenium_Maven//src//main//java//com//orangeHRMPages//Input_Data";
         properties=new Properties();
@@ -34,10 +34,6 @@ public class Base_Page
         {
             System.out.println(e);
         }
-    }
-
-    public void navigateToApplication()
-    {
         driver=new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(40));
