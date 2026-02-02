@@ -3,8 +3,8 @@ package com.orangeHRMPages;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
+import org.openqa.selenium.support.ui.ExpectedConditions;
 
-import java.util.Set;
 
 public class ForgotPassword_Page extends Base_Page
 {
@@ -23,19 +23,20 @@ public class ForgotPassword_Page extends Base_Page
     @FindBy(xpath="//button[@type='submit']")
     WebElement submit;
 
-    @FindBy(xpath="//h6[text()='Reset Password link sent successfully']")
+    @FindBy(xpath="//h6[contains(@class,'orangehrm-forgot-password-title')]")
+    //@FindBy(xpath="//h6[text()='Reset Password link sent successfully']")
     WebElement verifyResetPassword;
 
     public void passwordReset(String name)
     {
-        clickButton(forgotPassword);
+        clickButton(wait.until(ExpectedConditions.elementToBeClickable(forgotPassword)));
         writeText(name,userName);
-        clickButton(submit);
+        clickButton(wait.until(ExpectedConditions.elementToBeClickable(submit)));
     }
 
     public String actualOutput()
     {
-        return verifyResetPassword.getText();
+        return wait.until(ExpectedConditions.visibilityOf(verifyResetPassword)).getText();
     }
 
     public String expectedOutput()
