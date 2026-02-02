@@ -11,7 +11,7 @@
         <class name="com.orangeHRMTests.ForgotPasswordPageTest"/>
         <class name="com.orangeHRMTests.DeleteEmployeePageTest"/>
             <class name="com.negativeTests.LoginPageTest"/>
-
+            <class name="com.negativeTests.EmployeeListPageTest"/>
         </classes>
     </test>
 </suite>
