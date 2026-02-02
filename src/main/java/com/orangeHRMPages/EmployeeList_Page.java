@@ -43,4 +43,14 @@ public class EmployeeList_Page extends Base_Page
     {
         return "(1) Record Found";
     }
+
+    public String invalidActualOutput()
+    {
+        return recordFound.getText();
+    }
+
+    public String invalidExpectedOutput()
+    {
+        return "No Records Found";
+    }
 }
