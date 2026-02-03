@@ -23,8 +23,7 @@ public class ForgotPassword_Page extends Base_Page
     @FindBy(xpath="//button[@type='submit']")
     WebElement submit;
 
-    @FindBy(xpath="//h6[contains(@class,'orangehrm-forgot-password-title')]")
-    //@FindBy(xpath="//h6[text()='Reset Password link sent successfully']")
+    @FindBy(xpath="//h6[text()='Reset Password link sent successfully']")
     WebElement verifyResetPassword;
 
     public void passwordReset(String name)
