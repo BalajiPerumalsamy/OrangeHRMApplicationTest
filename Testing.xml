@@ -13,7 +13,7 @@
             <class name="com.orangeHRMTests.DeleteEmployeePageTest"/>
             <class name="com.negativeTests.LoginPageTest"/>
             <class name="com.negativeTests.EmployeeListPageTest"/>
-
+            <class name="com.negativeTests.AddEmployeePageTest"/>
         </classes>
     </test>
 </suite>
