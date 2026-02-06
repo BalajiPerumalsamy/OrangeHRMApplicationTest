@@ -52,10 +52,14 @@ public class AddEmployee_Page extends Base_Page
     @FindBy(xpath="//p[contains(@class,'oxd-text--toast-message')]")
     WebElement message2;
 
+    @FindBy(xpath="//span[text()='Required']")
+    WebElement message3;
+
     String firstMessage;
     String secondMessage;
+    String invalidMessage;
 
-    public void AddEmployee(String firstName, String lastName,String licenceNum,String licenceExpDate,String dofBirth)
+    public void addEmployee(String firstName, String lastName,String licenceNum,String licenceExpDate,String dofBirth)
     {
         writeText(firstName,firstname);
         writeText(lastName,lastname);
@@ -82,6 +86,15 @@ public class AddEmployee_Page extends Base_Page
         secondMessage=message2.getText();
     }
 
+    public void employeeAdd(String firstName)
+    {
+        writeText(firstName,firstname);
+        clickButton(saveButton);
+        wait.until(ExpectedConditions.visibilityOf(message3));
+        invalidMessage=message3.getText();
+
+    }
+
     public String actualDataSaved()
     {
         return firstMessage;
@@ -100,5 +113,15 @@ public class AddEmployee_Page extends Base_Page
     public String expectedDataUpdated()
     {
         return "Successfully Updated";
+    }
+
+    public String invalidActualDataSaved()
+    {
+        return invalidMessage;
+    }
+
+    public String invalidExpectedDataSaved()
+    {
+        return "Required";
     }
 }
