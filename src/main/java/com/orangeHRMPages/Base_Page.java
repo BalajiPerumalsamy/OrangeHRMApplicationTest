@@ -46,6 +46,7 @@ public class Base_Page
     {
         wait.until(ExpectedConditions.visibilityOf(element)).sendKeys(text);
     }
+
     public void clickButton(WebElement element)
     {
         wait.until(ExpectedConditions.elementToBeClickable(element)).click();
