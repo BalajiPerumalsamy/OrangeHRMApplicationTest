@@ -44,7 +44,7 @@ public class AddEmployeePageTest
     @Test(dataProvider="excelData")
     public void verifyAddEmployeeData(String firstName, String lastName,String licenceNum,String licenceExpDate,String dofBirth)
     {
-        addEmployeePage.AddEmployee(firstName,lastName,licenceNum,licenceExpDate,dofBirth);
+        addEmployeePage.addEmployee(firstName,lastName,licenceNum,licenceExpDate,dofBirth);
         Assert.assertEquals(addEmployeePage.actualDataSaved(), addEmployeePage.expectedDataSaved(),"Couldn't save user data");
         Assert.assertEquals(addEmployeePage.actualDataUpdated(), addEmployeePage.expectedDataUpdated(),"Couldn't update user data");
     }
