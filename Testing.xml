@@ -3,7 +3,6 @@
 <suite name="Reg_Suite">
     <test name="TestClassesExecute">
         <classes>
-
             <class name="com.orangeHRMTests.LoginPageTest"/>
             <class name="com.orangeHRMTests.DashboardPageTest"/>
             <class name="com.orangeHRMTests.PIMPageTest"/>
