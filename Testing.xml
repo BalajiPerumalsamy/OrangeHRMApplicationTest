@@ -13,6 +13,8 @@
             <class name="com.negativeTests.LoginPageTest"/>
             <class name="com.negativeTests.EmployeeListPageTest"/>
             <class name="com.negativeTests.AddEmployeePageTest"/>
+            <class name="com.orangeHRMTests.LogoutPageTest"/>
+            <class name="com.orangeHRMTests.ChangePasswordPageTest"/>
         </classes>
     </test>
 </suite>
