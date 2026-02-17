@@ -4,18 +4,26 @@
     <test name="TestClassesExecute">
         <classes>
 
-            <class name="com.orangeHRMTests.LoginPageTest"/>
-            <class name="com.orangeHRMTests.DashboardPageTest"/>
-            <class name="com.orangeHRMTests.PIMPageTest"/>
-            <class name="com.orangeHRMTests.AddEmployeePageTest"/>
-            <class name="com.orangeHRMTests.EmployeeListPageTest"/>
-            <class name="com.orangeHRMTests.ForgotPasswordPageTest"/>
-            <class name="com.orangeHRMTests.DeleteEmployeePageTest"/>
+            <class name="com.positiveTests.LoginPageTest"/>
+            <class name="com.positiveTests.DashboardPageTest"/>
+            <class name="com.positiveTests.PIMPageTest"/>
+            <class name="com.positiveTests.AddEmployeePageTest"/>
+            <class name="com.positiveTests.EmployeeListPageTest"/>
+            <class name="com.positiveTests.ForgotPasswordPageTest"/>
+            <class name="com.positiveTests.DeleteEmployeePageTest"/>
+            <class name="com.positiveTests.LogoutPageTest"/>
+            <class name="com.positiveTests.ChangePasswordPageTest"/>
+
             <class name="com.negativeTests.LoginPageTest"/>
             <class name="com.negativeTests.EmployeeListPageTest"/>
             <class name="com.negativeTests.AddEmployeePageTest"/>
-            <class name="com.orangeHRMTests.LogoutPageTest"/>
-            <class name="com.orangeHRMTests.ChangePasswordPageTest"/>
+            <class name="com.negativeTests.ChangePasswordEmptyFieldTest"/>
+            <class name="com.negativeTests.ChangePasswordIncorrectCurrentPasswordTest"/>
+            <class name="com.negativeTests.ChangePasswordLessCharacterPasswordTest"/>
+            <class name="com.negativeTests.ChangePasswordMinimumOneLowerCaseLetterTest"/>
+            <class name="com.negativeTests.ChangePasswordMinimumOneNumberPasswordTest"/>
+            <class name="com.negativeTests.ChangePasswordMisMatchPasswordTest"/>
+
         </classes>
     </test>
 </suite>
