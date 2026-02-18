@@ -28,7 +28,6 @@ public class LoginPageTest
     public void verifyLogin()
     {
         loginPage=new Login_Page();
-        properties=new Properties();
         loginPage.login(basePage.properties.getProperty("userName"), basePage.properties.getProperty("password"));
         Assert.assertEquals(loginPage.actualOutput(),loginPage.expectedOutput(),"Couldn't navigate to Dashboard page");
     }
