@@ -27,7 +27,6 @@ public class AddEmployeePageTest
         dashboardPage=new Dashboard_Page();
         pimPage=new PIM_Page();
         addEmployeePage=new AddEmployee_Page();
-        properties=new Properties();
         loginPage.login(basePage.properties.getProperty("userName"),basePage.properties.getProperty("password"));
         dashboardPage.navigateToPIM();
         pimPage.navigateToAddEmployee();
