@@ -46,10 +46,22 @@ public class ChangePassword_Page extends Base_Page
     public WebElement minimumOneNumberPasswordErrorMessage;
 
     @FindBy(xpath="//span[text()='Your password must contain minimum 1 lower-case letter']")
-    public WebElement minimumOneLowerCCaseLetterErrorMessage;
+    public WebElement minimumOneLowerCaseLetterErrorMessage;
 
     @FindBy(xpath="//span[text()='Passwords do not match']")
     public WebElement passwordMismatchErrorMessage;
+
+    @FindBy(xpath=" //span[text()='Weak ']")
+    public WebElement weakPassword;
+
+    @FindBy(xpath=" //span[text()='Better ']")
+    public WebElement betterPassword;
+
+    @FindBy(xpath=" //span[text()='Strong ']")
+    public WebElement strongPassword;
+
+    @FindBy(xpath="//span[text()='Strongest ']")
+    public WebElement strongestPassword;
 
     public void passwordChange(String oldPassword, String newPass, String confirmPass)
     {
