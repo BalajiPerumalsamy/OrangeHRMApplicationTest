@@ -4,7 +4,7 @@ userName=Admin
 password=admin123
 
 empName=Ram
-empID=0971
+empID=0372
 
 invalidEmpName=Ajay
 invalidEmpID=0901
@@ -28,3 +28,15 @@ numberNewPassword=123456789
 numberConfirmPassword=123456789
 
 mismatchConfirmPassword=Balu@12
+
+weakNewPassword=1234567b
+weakConfirmPassword=1234567b
+
+betterNewPassword=balu@12
+betterConfirmPassword=balu@12
+
+strongNewPassword=Balaji@123
+strongConfirmPassword=Balaji@123
+
+strongestNewPassword=Balaji@Perumalsamy123
+strongestConfirmPassword=Balaji@Perumalsamy123
