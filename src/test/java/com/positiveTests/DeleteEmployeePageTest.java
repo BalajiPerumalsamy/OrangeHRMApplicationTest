@@ -28,7 +28,6 @@ public class DeleteEmployeePageTest
         basePage=new Base_Page();
         basePage.navigateToApplication();
         loginPage=new Login_Page();
-        properties=new Properties();
         loginPage.login(basePage.properties.getProperty("userName"),basePage.properties.getProperty("password"));
         dashboardPage=new Dashboard_Page();
         dashboardPage.navigateToPIM();
