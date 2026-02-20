@@ -12,6 +12,7 @@ public class ChangePassword_Page extends Base_Page
         super();
         PageFactory.initElements(driver,this);
     }
+
     @FindBy(xpath="//i[@class='oxd-icon bi-caret-down-fill oxd-userdropdown-icon']")
     WebElement dropdownButton;
 
@@ -79,6 +80,7 @@ public class ChangePassword_Page extends Base_Page
         clickButton(passwordChange);
         clickButton(clickSaveButton);
     }
+
     public String actualOutput()
     {
         wait.until(ExpectedConditions.visibilityOf(message));
