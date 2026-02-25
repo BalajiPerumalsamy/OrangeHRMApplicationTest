@@ -5,7 +5,6 @@ import com.orangeHRMPages.*;
 import com.utils.ExcelUtils;
 import org.testng.Assert;
 import org.testng.annotations.*;
-
 import java.util.Properties;
 
 @Listeners(MyListener.class)
