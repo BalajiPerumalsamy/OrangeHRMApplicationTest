@@ -27,6 +27,7 @@
             <class name="com.negativeTests.ChangePasswordMinimumOneLowerCaseLetterTest"/>
             <class name="com.negativeTests.ChangePasswordMinimumOneNumberPasswordTest"/>
             <class name="com.negativeTests.ChangePasswordMisMatchPasswordTest"/>
+
         </classes>
     </test>
 </suite>
