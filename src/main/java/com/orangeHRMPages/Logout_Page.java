@@ -32,6 +32,7 @@ public class Logout_Page extends Base_Page
     {
         return verifyLogOutFunction.getText();
     }
+
     public String expectedOutput()
     {
         return "Login";
