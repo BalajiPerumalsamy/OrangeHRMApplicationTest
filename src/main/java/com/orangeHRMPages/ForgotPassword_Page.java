@@ -8,6 +8,7 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class ForgotPassword_Page extends Base_Page
 {
+
     public ForgotPassword_Page()
     {
         super();
