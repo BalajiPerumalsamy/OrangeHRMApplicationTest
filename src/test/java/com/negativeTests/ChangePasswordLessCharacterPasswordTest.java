@@ -52,4 +52,5 @@ public class ChangePasswordLessCharacterPasswordTest
             System.out.println(e);
         }
     }
+
 }
