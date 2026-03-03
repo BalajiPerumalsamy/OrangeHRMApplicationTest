@@ -50,4 +50,5 @@ public class ChangePasswordEmptyFieldTest
             System.out.println(e);
         }
     }
+
 }
