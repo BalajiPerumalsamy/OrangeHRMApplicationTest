@@ -52,4 +52,5 @@ public class ChangePasswordIncorrectCurrentPasswordTest
             System.out.println(e);
         }
     }
+
 }
