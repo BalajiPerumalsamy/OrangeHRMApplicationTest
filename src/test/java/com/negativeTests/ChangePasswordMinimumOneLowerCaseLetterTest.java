@@ -52,4 +52,5 @@ public class ChangePasswordMinimumOneLowerCaseLetterTest
             System.out.println(e);
         }
     }
+
 }
