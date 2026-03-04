@@ -50,7 +50,7 @@ public class AddEmployeePageTest
     public void tearDown()
     {
         try
-        {
+        {  
             Thread.sleep(10000);
             basePage.quit();
         }
