@@ -8,7 +8,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import java.util.Properties;
 
 @Listeners(MyListener.class)
 public class EmployeeListPageTest
@@ -18,7 +17,6 @@ public class EmployeeListPageTest
     public Dashboard_Page dashboardPage;
     public PIM_Page pimPage;
     public EmployeeList_Page employeeList;
-    public Properties properties;
 
     @BeforeMethod
     public void setUp()
