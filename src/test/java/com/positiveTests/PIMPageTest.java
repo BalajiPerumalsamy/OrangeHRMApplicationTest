@@ -11,7 +11,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import java.util.Properties;
 
 @Listeners(MyListener.class)
 public class PIMPageTest
@@ -20,7 +19,6 @@ public class PIMPageTest
     public Login_Page loginPage;
     public Dashboard_Page dashboardPage;
     public PIM_Page pimPage;
-    public Properties properties;
 
     @BeforeMethod
     public void setUp()
