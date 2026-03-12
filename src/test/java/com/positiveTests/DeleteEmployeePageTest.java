@@ -8,7 +8,6 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import java.util.Properties;
 
 @Listeners(MyListener.class)
 public class DeleteEmployeePageTest
@@ -20,7 +19,6 @@ public class DeleteEmployeePageTest
     AddEmployee_Page addEmployeePage;
     EmployeeList_Page employeeListPage;
     DeleteEmployee_Page deleteEmployeePage;
-    public Properties properties;
 
     @BeforeMethod
     public void setUp()
