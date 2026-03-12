@@ -10,13 +10,11 @@ import org.testng.annotations.BeforeMethod;
 import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
-import java.util.Properties;
 @Listeners(MyListener.class)
 public class ChangePasswordEmptyFieldTest
 {
     public Base_Page basePage;
     public Login_Page loginPage;
-    public Properties properties;
     public ChangePassword_Page passwordPage;
 
     @BeforeMethod
