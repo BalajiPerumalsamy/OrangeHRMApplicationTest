@@ -12,8 +12,8 @@ import org.testng.annotations.Test;
 @Listeners(MyListener.class)
 public class ForgotPasswordPageTest
 {
-    Base_Page basePage;
-    ForgotPassword_Page forgotPasswordPage;
+    public Base_Page basePage;
+    public ForgotPassword_Page forgotPasswordPage;
 
     @BeforeMethod
     public void setUp()
