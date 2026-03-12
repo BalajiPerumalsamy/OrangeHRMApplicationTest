@@ -5,7 +5,6 @@ import com.orangeHRMPages.*;
 import com.utils.ExcelUtils;
 import org.testng.Assert;
 import org.testng.annotations.*;
-import java.util.Properties;
 
 @Listeners(MyListener.class)
 public class AddEmployeePageTest
@@ -15,7 +14,6 @@ public class AddEmployeePageTest
     public Dashboard_Page dashboardPage;
     public PIM_Page pimPage;
     public AddEmployee_Page addEmployeePage;
-    public Properties properties;
 
     @BeforeMethod
     public void setUp()
