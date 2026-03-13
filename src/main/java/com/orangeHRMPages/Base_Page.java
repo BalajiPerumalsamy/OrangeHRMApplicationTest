@@ -23,7 +23,7 @@ public class Base_Page
 
     public void navigateToApplication()
     {
-        String fPath="C://Users//ELCOT//IdeaProjects//Selenium_Maven//src//main//java//com//orangeHRMPages//Input_Data";
+        String fPath="C://Users//ELCOT//IdeaProjects//Selenium_Maven//src//main//resources//Input_Data";
         properties=new Properties();
         try
         {
