@@ -3,7 +3,6 @@
 <suite name="Reg_Suite">
     <test name="TestClassesExecute">
         <classes>
-            
             <class name="com.positiveTests.LoginPageTest"/>
             <class name="com.positiveTests.DashboardPageTest"/>
             <class name="com.positiveTests.PIMPageTest"/>
@@ -17,6 +16,8 @@
             <class name="com.positiveTests.ChangeBetterPasswordTest"/>
             <class name="com.positiveTests.ChangeStrongPasswordTest"/>
             <class name="com.positiveTests.ChangeStrongestPasswordTest"/>
+            <class name="com.positiveTests.BuzzPageTest"/>
+            <class name="com.positiveTests.DeleteBuzzNewsFeedPageTest"/>
 
             <class name="com.negativeTests.LoginPageTest"/>
             <class name="com.negativeTests.EmployeeListPageTest"/>
@@ -27,7 +28,6 @@
             <class name="com.negativeTests.ChangePasswordMinimumOneLowerCaseLetterTest"/>
             <class name="com.negativeTests.ChangePasswordMinimumOneNumberPasswordTest"/>
             <class name="com.negativeTests.ChangePasswordMisMatchPasswordTest"/>
-
         </classes>
     </test>
 </suite>
