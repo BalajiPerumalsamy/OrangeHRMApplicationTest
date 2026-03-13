@@ -16,7 +16,6 @@ public class DeleteEmployeePageTest
     Login_Page loginPage;
     Dashboard_Page dashboardPage;
     PIM_Page pimPage;
-    AddEmployee_Page addEmployeePage;
     EmployeeList_Page employeeListPage;
     DeleteEmployee_Page deleteEmployeePage;
 
