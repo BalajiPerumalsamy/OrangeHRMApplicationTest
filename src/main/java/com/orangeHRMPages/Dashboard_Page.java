@@ -15,12 +15,23 @@ public class Dashboard_Page extends Base_Page
     @FindBy(xpath="//span[text()='PIM']")
     WebElement pim;
 
+    @FindBy(xpath="//span[text()='Buzz']")
+    WebElement buzz;
+
     @FindBy(xpath="//h6[text()='PIM']")
     WebElement verifyPIM;
+
+    @FindBy(xpath="//h6[text()='Buzz']")
+    public WebElement verifyBuzz;
 
     public void navigateToPIM()
     {
         clickButton(pim);
+    }
+
+    public void navigateToBuzz()
+    {
+        clickButton(buzz);
     }
 
     public String actualOutput()
