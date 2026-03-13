@@ -35,6 +35,13 @@ public class DashboardPageTest
         Assert.assertEquals(dashboardPage.actualOutput(),dashboardPage.ExpectedOutput(),"Couldn't navigate to PIM page");
     }
 
+    @Test
+    public void navigateToBuzzPage()
+    {
+        dashboardPage.navigateToBuzz();
+        Assert.assertTrue(dashboardPage.verifyBuzz.isDisplayed(),"Couldn't navigate to Buzz Page");
+    }
+
     @AfterMethod
     public void tearDown()
     {
