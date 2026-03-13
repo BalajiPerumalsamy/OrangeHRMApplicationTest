@@ -26,6 +26,7 @@ public class AddEmployeePageTest
         pimPage=new PIM_Page();
         addEmployeePage=new AddEmployee_Page();
         loginPage.login(basePage.properties.getProperty("userName"),basePage.properties.getProperty("password"));
+        Assert.assertEquals(loginPage.actualOutput(),loginPage.expectedOutput(),"Couldn't navigate to Dashboard page");
         dashboardPage.navigateToPIM();
         pimPage.navigateToAddEmployee();
         Assert.assertEquals(pimPage.actualAddEmployee(),pimPage.expectedAddEmployee(),"Couldn't navigate to Add Employee page");
