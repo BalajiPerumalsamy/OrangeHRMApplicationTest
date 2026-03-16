@@ -46,14 +46,6 @@ public class DeleteEmployeePageTest
     @AfterMethod(alwaysRun=true)
     public void tearDown()
     {
-        try
-        {
-            Thread.sleep(15000);
-            basePage.quit();
-        }
-        catch(InterruptedException e)
-        {
-            System.out.println(e);
-        }
+        basePage.quitApplication();
     }
 }
