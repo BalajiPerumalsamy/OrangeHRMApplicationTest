@@ -51,9 +51,17 @@ public class Base_Page
     {
         wait.until(ExpectedConditions.elementToBeClickable(element)).click();
     }
-    public void quit()
+    public void quitApplication()
     {
-        driver.quit();
+        try
+        {
+            Thread.sleep(10000);
+            driver.quit();
+        }
+        catch(InterruptedException e)
+        {
+            System.out.println(e);
+        }
     }
     public String captureScreenshot(String testName)
     {
