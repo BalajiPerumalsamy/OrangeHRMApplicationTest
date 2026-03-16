@@ -39,14 +39,6 @@ public class ChangePasswordPageTest
     @AfterMethod
     public void tearDown()
     {
-        try
-        {
-            Thread.sleep(10000);
-            basePage.quit();
-        }
-        catch(InterruptedException e)
-        {
-            System.out.println(e);
-        }
+        basePage.quitApplication();
     }
 }
