@@ -51,6 +51,7 @@ public class Base_Page
     {
         wait.until(ExpectedConditions.elementToBeClickable(element)).click();
     }
+
     public void quitApplication()
     {
         try
@@ -63,6 +64,7 @@ public class Base_Page
             System.out.println(e);
         }
     }
+
     public String captureScreenshot(String testName)
     {
         String path = "screenshots/" + testName + ".png";
