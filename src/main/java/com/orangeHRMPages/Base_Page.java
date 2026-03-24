@@ -65,7 +65,7 @@ public class Base_Page
         }
     }
 
-    public String captureScreenshot(String testName)
+    public static String captureScreenshot(String testName)
     {
         String path = "screenshots/" + testName + ".png";
         try
