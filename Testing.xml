@@ -20,8 +20,6 @@
             <class name="com.positiveTests.BuzzPageTest"/>
             <class name="com.positiveTests.DeleteBuzzNewsFeedPageTest"/>
 
-            <!--
-
             <class name="com.negativeTests.LoginPageTest"/>
             <class name="com.negativeTests.EmployeeListPageTest"/>
             <class name="com.negativeTests.AddEmployeePageTest"/>
@@ -31,7 +29,7 @@
             <class name="com.negativeTests.ChangePasswordMinimumOneLowerCaseLetterTest"/>
             <class name="com.negativeTests.ChangePasswordMinimumOneNumberPasswordTest"/>
             <class name="com.negativeTests.ChangePasswordMisMatchPasswordTest"/>
-            -->
+
 
         </classes>
     </test>
