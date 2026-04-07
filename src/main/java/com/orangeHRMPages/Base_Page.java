@@ -23,17 +23,19 @@ public class Base_Page
 
     public void navigateToApplication()
     {
-        String fPath="C://Users//ELCOT//IdeaProjects//Selenium_Maven//src//main//resources//Input_Data";
+        String filePath="C://Users//ELCOT//IdeaProjects//Selenium_Maven//src//main//resources//Input_Data";
         properties=new Properties();
+
         try
         {
-            FileInputStream fileInput=new FileInputStream(fPath);
+            FileInputStream fileInput=new FileInputStream(filePath);
             properties.load(fileInput);
         }
         catch(IOException e)
         {
             System.out.println(e);
         }
+
         driver=new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().timeouts().pageLoadTimeout(Duration.ofSeconds(40));
