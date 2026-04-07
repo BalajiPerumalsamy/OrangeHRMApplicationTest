@@ -25,7 +25,8 @@ public class ChangePasswordMinimumOneLowerCaseLetterTest
         basePage.navigateToApplication();
         loginPage=new Login_Page();
         loginPage.login(basePage.properties.getProperty("userName"),basePage.properties.getProperty("password"));
-        Assert.assertEquals(loginPage.actualOutput(),loginPage.expectedOutput(),"Couldn't navigate to Dashboard page");
+        Assert.assertEquals(loginPage.actualOutput(),
+                loginPage.expectedOutput(),"Couldn't navigate to Dashboard page");
     }
 
     @Test
@@ -33,8 +34,10 @@ public class ChangePasswordMinimumOneLowerCaseLetterTest
     {
         passwordPage=new ChangePassword_Page();
         passwordPage.passwordChange(basePage.properties.getProperty("currentPassword"),
-                basePage.properties.getProperty("characterNewPassword"),basePage.properties.getProperty("characterConfirmPassword"));
-        Assert.assertTrue(passwordPage.minimumOneNumberPasswordErrorMessage.isDisplayed(),"Error message not displayed for enter minimum one lower case letter new password field");
+                basePage.properties.getProperty("characterNewPassword"),
+                basePage.properties.getProperty("characterConfirmPassword"));
+        Assert.assertTrue(passwordPage.minimumOneNumberPasswordErrorMessage.isDisplayed(),
+                "Error message not displayed for enter minimum one lower case letter new password field");
     }
 
     @AfterMethod
