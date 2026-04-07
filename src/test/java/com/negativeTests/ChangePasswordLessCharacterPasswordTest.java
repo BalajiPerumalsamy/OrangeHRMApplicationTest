@@ -25,7 +25,8 @@ public class ChangePasswordLessCharacterPasswordTest
         basePage.navigateToApplication();
         loginPage=new Login_Page();
         loginPage.login(basePage.properties.getProperty("userName"),basePage.properties.getProperty("password"));
-        Assert.assertEquals(loginPage.actualOutput(),loginPage.expectedOutput(),"Couldn't navigate to Dashboard page");
+        Assert.assertEquals(loginPage.actualOutput(),
+                loginPage.expectedOutput(),"Couldn't navigate to Dashboard page");
     }
 
     @Test
@@ -33,8 +34,10 @@ public class ChangePasswordLessCharacterPasswordTest
     {
         passwordPage=new ChangePassword_Page();
         passwordPage.passwordChange(basePage.properties.getProperty("currentPassword"),
-                basePage.properties.getProperty("lessNewPassword"),basePage.properties.getProperty("lessConfirmPassword"));
-        Assert.assertTrue(passwordPage.lessThanCharactersPasswordErrorMessage.isDisplayed(),"Error message not displayed for enter less than character new password field");
+                basePage.properties.getProperty("lessNewPassword"),
+                basePage.properties.getProperty("lessConfirmPassword"));
+        Assert.assertTrue(passwordPage.lessThanCharactersPasswordErrorMessage.isDisplayed(),
+                "Error message not displayed for enter less than character new password field");
     }
 
     @AfterMethod
@@ -42,5 +45,4 @@ public class ChangePasswordLessCharacterPasswordTest
     {
         basePage.quitApplication();
     }
-
 }
