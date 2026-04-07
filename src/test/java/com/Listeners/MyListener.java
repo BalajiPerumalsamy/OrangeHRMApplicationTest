@@ -11,6 +11,7 @@ public class MyListener implements ITestListener
 {
     ExtentReports extent=ReportManager.getReport();
     ExtentTest test;
+
     public void onStart(ITestContext context)
     {
         System.out.println("Test Suite Started : " + context.getName());
@@ -39,10 +40,12 @@ public class MyListener implements ITestListener
     public void onTestSkipped(ITestResult result)
     {
         test.log(Status.SKIP,"Test Skipped");
+
         if(result.getThrowable()!=null)
         {
             test.skip("Skip Reason : "+result.getThrowable().getMessage());
         }
+
         String path=Base_Page.captureScreenshot(result.getName());
         test.skip(MediaEntityBuilder.createScreenCaptureFromPath(path).build());
     }
