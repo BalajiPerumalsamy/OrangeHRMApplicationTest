@@ -12,6 +12,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 @Listeners(MyListener.class)
+
 public class BuzzPageTest
 {
     public Base_Page basePage;
