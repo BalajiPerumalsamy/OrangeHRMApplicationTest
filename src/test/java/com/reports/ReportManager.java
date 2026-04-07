@@ -7,7 +7,8 @@ public class ReportManager
 {
     public static ExtentReports extent;
 
-    public static ExtentReports getReport() {
+    public static ExtentReports getReport()
+    {
         ExtentSparkReporter reporter =
                 new ExtentSparkReporter("ExtentReport.html");
 
