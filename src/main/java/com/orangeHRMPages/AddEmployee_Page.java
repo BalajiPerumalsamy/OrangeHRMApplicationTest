@@ -7,6 +7,10 @@ import org.openqa.selenium.support.ui.ExpectedConditions;
 
 public class AddEmployee_Page extends Base_Page
 {
+    String firstMessage;
+    String secondMessage;
+    String invalidMessage;
+
     public AddEmployee_Page()
     {
         super();
@@ -54,10 +58,6 @@ public class AddEmployee_Page extends Base_Page
 
     @FindBy(xpath="//span[text()='Required']")
     WebElement message3;
-
-    String firstMessage;
-    String secondMessage;
-    String invalidMessage;
 
     public void addEmployee(String firstName, String lastName,String licenceNum,String licenceExpDate,String dofBirth)
     {
