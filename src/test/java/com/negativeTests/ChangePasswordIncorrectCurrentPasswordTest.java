@@ -11,6 +11,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 @Listeners(MyListener.class)
+
 public class ChangePasswordIncorrectCurrentPasswordTest
 {
     public Base_Page basePage;
@@ -24,7 +25,8 @@ public class ChangePasswordIncorrectCurrentPasswordTest
         basePage.navigateToApplication();
         loginPage=new Login_Page();
         loginPage.login(basePage.properties.getProperty("userName"),basePage.properties.getProperty("password"));
-        Assert.assertEquals(loginPage.actualOutput(),loginPage.expectedOutput(),"Couldn't navigate to Dashboard page");
+        Assert.assertEquals(loginPage.actualOutput(),
+                loginPage.expectedOutput(),"Couldn't navigate to Dashboard page");
 
     }
 
@@ -34,7 +36,8 @@ public class ChangePasswordIncorrectCurrentPasswordTest
         passwordPage=new ChangePassword_Page();
         passwordPage.passwordChange(basePage.properties.getProperty("incorrectCurrentPassword"),
                 basePage.properties.getProperty("newPassword"),basePage.properties.getProperty("confirmPassword"));
-        Assert.assertEquals(passwordPage.incorrectCurrentPasswordActualOutput(),passwordPage.incorrectCurrentPasswordExpectedOutput(),"Password update Successful");
+        Assert.assertEquals(passwordPage.incorrectCurrentPasswordActualOutput(),
+                passwordPage.incorrectCurrentPasswordExpectedOutput(),"Password update Successful");
     }
 
     @AfterMethod
@@ -42,5 +45,4 @@ public class ChangePasswordIncorrectCurrentPasswordTest
     {
         basePage.quitApplication();
     }
-
 }
