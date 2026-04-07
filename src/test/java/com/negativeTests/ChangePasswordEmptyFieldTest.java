@@ -11,6 +11,7 @@ import org.testng.annotations.Listeners;
 import org.testng.annotations.Test;
 
 @Listeners(MyListener.class)
+
 public class ChangePasswordEmptyFieldTest
 {
     public Base_Page basePage;
@@ -40,5 +41,4 @@ public class ChangePasswordEmptyFieldTest
     {
         basePage.quitApplication();
     }
-
 }
