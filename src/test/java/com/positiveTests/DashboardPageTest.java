@@ -32,7 +32,8 @@ public class DashboardPageTest
     public void verifyPIMPage()
     {
         dashboardPage.navigateToPIM();
-        Assert.assertEquals(dashboardPage.actualOutput(),dashboardPage.ExpectedOutput(),"Couldn't navigate to PIM page");
+        Assert.assertEquals(dashboardPage.actualOutput(),
+                dashboardPage.ExpectedOutput(),"Couldn't navigate to PIM page");
     }
 
     @Test
