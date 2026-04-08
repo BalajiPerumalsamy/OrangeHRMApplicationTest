@@ -24,12 +24,14 @@ public class DeleteBuzzNewsFeedPageTest
         basePage.navigateToApplication();
         loginPage=new Login_Page();
         loginPage.login(basePage.properties.getProperty("userName"),basePage.properties.getProperty("password"));
-        Assert.assertEquals(loginPage.actualOutput(),loginPage.expectedOutput(),"Couldn't navigate to Dashboard page");
+        Assert.assertEquals(loginPage.actualOutput(),loginPage.expectedOutput(),
+                "Couldn't navigate to Dashboard page");
         dashboardPage=new Dashboard_Page();
         dashboardPage.navigateToBuzz();
         buzzPage=new Buzz_Page();
         buzzPage.buzzNewsFeed(basePage.properties.getProperty("feed"));
-        Assert.assertTrue(buzzPage.confirmationMessage.isDisplayed(),"couldn't show confirmation message");
+        Assert.assertTrue(buzzPage.confirmationMessage.isDisplayed(),
+                "couldn't show confirmation message");
     }
 
     @Test
