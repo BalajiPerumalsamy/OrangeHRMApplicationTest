@@ -25,14 +25,17 @@ public class ChangeStrongPasswordTest
         basePage.navigateToApplication();
         loginPage=new Login_Page();
         loginPage.login(basePage.properties.getProperty("userName"),basePage.properties.getProperty("password"));
-        Assert.assertEquals(loginPage.actualOutput(),loginPage.expectedOutput(),"Couldn't navigate to Dashboard page");
+        Assert.assertEquals(loginPage.actualOutput(),
+                loginPage.expectedOutput(),"Couldn't navigate to Dashboard page");
     }
 
     @Test
     public void verifyWeakPasswordChange()
     {
         passwordPage=new ChangePassword_Page();
-        passwordPage.passwordChange(basePage.properties.getProperty("currentPassword"),basePage.properties.getProperty("strongNewPassword"),basePage.properties.getProperty("strongConfirmPassword"));
+        passwordPage.passwordChange(basePage.properties.getProperty("currentPassword"),
+                basePage.properties.getProperty("strongNewPassword"),
+                basePage.properties.getProperty("strongConfirmPassword"));
         Assert.assertTrue(passwordPage.strongPassword.isDisplayed(),"Strong is not visible");
     }
 
