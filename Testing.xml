@@ -3,7 +3,6 @@
 <suite name="Reg_Suite">
     <test name="TestClassesExecute">
         <classes>
-
             <class name="com.positiveTests.LoginPageTest"/>
             <class name="com.positiveTests.DashboardPageTest"/>
             <class name="com.positiveTests.PIMPageTest"/>
@@ -33,3 +32,26 @@
         </classes>
     </test>
 </suite>
+
+
+<!--
+modified:   ExtentReport.html
+        modified:   Screenshots/verifyDeleteEmployee.png
+        modified:   Screenshots/verifySearchEmployee.png
+        modified:
+        modified:
+        modified:
+        modified:
+        modified:
+        modified:
+        modified:
+        modified:
+        modified:
+        modified:
+        modified:
+        modified:
+        modified:
+        modified:
+        modified:
+        modified:
+-->
