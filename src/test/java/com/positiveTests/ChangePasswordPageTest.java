@@ -24,14 +24,16 @@ public class ChangePasswordPageTest
         basePage.navigateToApplication();
         loginPage=new Login_Page();
         loginPage.login(basePage.properties.getProperty("userName"),basePage.properties.getProperty("password"));
-        Assert.assertEquals(loginPage.actualOutput(),loginPage.expectedOutput(),"Couldn't navigate to Dashboard page");
+        Assert.assertEquals(loginPage.actualOutput(),loginPage.expectedOutput(),
+                "Couldn't navigate to Dashboard page");
     }
 
     @Test
     public void verifyChangePassword()
     {
         password=new ChangePassword_Page();
-        password.passwordChange(basePage.properties.getProperty("currentPassword"),basePage.properties.getProperty("newPassword"),basePage.properties.getProperty("confirmPassword"));
+        password.passwordChange(basePage.properties.getProperty("currentPassword"),
+                basePage.properties.getProperty("newPassword"),basePage.properties.getProperty("confirmPassword"));
         Assert.assertEquals(password.actualOutput(),password.expectedOutput(),"Password couldn't update");
     }
 
