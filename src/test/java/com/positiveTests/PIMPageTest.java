@@ -36,21 +36,24 @@ public class PIMPageTest
     public void verifyAddEmployeeNavigate()
     {
         pimPage.navigateToAddEmployee();
-        Assert.assertEquals(pimPage.actualAddEmployee(),pimPage.expectedAddEmployee(),"Couldn't Navigate to Add Employee Page");
+        Assert.assertEquals(pimPage.actualAddEmployee(),pimPage.expectedAddEmployee(),
+                "Couldn't Navigate to Add Employee Page");
     }
 
     @Test(priority=2)
     public void verifyEmployeeListNavigate()
     {
         pimPage.navigateToEmployeeList();
-        Assert.assertEquals(pimPage.actualEmployeeList(),pimPage.expectedEmployeeList(),"Couldn't Navigate to Employee List Page");
+        Assert.assertEquals(pimPage.actualEmployeeList(),pimPage.expectedEmployeeList(),
+                "Couldn't Navigate to Employee List Page");
     }
 
     @Test(priority=3)
     public void verifyReportNavigate()
     {
         pimPage.navigateToReport();
-        Assert.assertEquals(pimPage.actualEmployeeReport(),pimPage.expectedEmployeeReport(),"Couldn't Navigate to Employee Reports Page");
+        Assert.assertEquals(pimPage.actualEmployeeReport(),pimPage.expectedEmployeeReport(),
+                "Couldn't Navigate to Employee Reports Page");
     }
 
     @AfterMethod
