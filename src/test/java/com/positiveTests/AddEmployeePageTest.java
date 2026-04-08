@@ -26,10 +26,12 @@ public class AddEmployeePageTest
         pimPage=new PIM_Page();
         addEmployeePage=new AddEmployee_Page();
         loginPage.login(basePage.properties.getProperty("userName"),basePage.properties.getProperty("password"));
-        Assert.assertEquals(loginPage.actualOutput(),loginPage.expectedOutput(),"Couldn't navigate to Dashboard page");
+        Assert.assertEquals(loginPage.actualOutput(),loginPage.expectedOutput(),
+                "Couldn't navigate to Dashboard page");
         dashboardPage.navigateToPIM();
         pimPage.navigateToAddEmployee();
-        Assert.assertEquals(pimPage.actualAddEmployee(),pimPage.expectedAddEmployee(),"Couldn't navigate to Add Employee page");
+        Assert.assertEquals(pimPage.actualAddEmployee(),
+                pimPage.expectedAddEmployee(),"Couldn't navigate to Add Employee page");
     }
 
     @DataProvider(name="excelData")
@@ -43,8 +45,10 @@ public class AddEmployeePageTest
     public void verifyAddEmployeeData(String firstName, String lastName,String licenceNum,String licenceExpDate,String dofBirth)
     {
         addEmployeePage.addEmployee(firstName,lastName,licenceNum,licenceExpDate,dofBirth);
-        Assert.assertEquals(addEmployeePage.actualDataSaved(), addEmployeePage.expectedDataSaved(),"Couldn't save user data");
-        Assert.assertEquals(addEmployeePage.actualDataUpdated(), addEmployeePage.expectedDataUpdated(),"Couldn't update user data");
+        Assert.assertEquals(addEmployeePage.actualDataSaved(),
+                addEmployeePage.expectedDataSaved(),"Couldn't save user data");
+        Assert.assertEquals(addEmployeePage.actualDataUpdated(),
+                addEmployeePage.expectedDataUpdated(),"Couldn't update user data");
     }
 
     @AfterMethod
