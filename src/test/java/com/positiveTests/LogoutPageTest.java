@@ -25,7 +25,8 @@ public class LogoutPageTest
         basePage.navigateToApplication();
         loginPage=new Login_Page();
         loginPage.login(basePage.properties.getProperty("userName"), basePage.properties.getProperty("password"));
-        Assert.assertEquals(loginPage.actualOutput(),loginPage.expectedOutput(),"Couldn't navigate to Dashboard page");
+        Assert.assertEquals(loginPage.actualOutput(),loginPage.expectedOutput(),
+                "Couldn't navigate to Dashboard page");
     }
 
     @Test
@@ -33,7 +34,8 @@ public class LogoutPageTest
     {
         logoutPage=new Logout_Page();
         logoutPage.logout();
-        Assert.assertEquals(logoutPage.actualOutput(),logoutPage.expectedOutput(),"Couldn't navigate to Login page");
+        Assert.assertEquals(logoutPage.actualOutput(),logoutPage.expectedOutput(),
+                "Couldn't navigate to Login page");
     }
 
     @AfterMethod
