@@ -32,15 +32,18 @@ public class DeleteEmployeePageTest
         pimPage.navigateToEmployeeList();
         employeeListPage=new EmployeeList_Page();
         deleteEmployeePage=new DeleteEmployee_Page();
-        employeeListPage.clickSearchButton(basePage.properties.getProperty("empName"),basePage.properties.getProperty("empID"));
-        Assert.assertEquals(deleteEmployeePage.actualOutputRecord(),deleteEmployeePage.expectedOutputRecord(),"No employee record found");
+        employeeListPage.clickSearchButton(basePage.properties.getProperty("empName"),
+                basePage.properties.getProperty("empID"));
+        Assert.assertEquals(deleteEmployeePage.actualOutputRecord(),
+                deleteEmployeePage.expectedOutputRecord(),"No employee record found");
     }
 
     @Test
     public void verifyDeleteEmployee()
     {
         deleteEmployeePage.delete();
-        Assert.assertEquals(deleteEmployeePage.actualOutput(),deleteEmployeePage.expectedOutput(),"Couldn't Delete user data");
+        Assert.assertEquals(deleteEmployeePage.actualOutput(),
+                deleteEmployeePage.expectedOutput(),"Couldn't Delete user data");
     }
 
     @AfterMethod(alwaysRun=true)
