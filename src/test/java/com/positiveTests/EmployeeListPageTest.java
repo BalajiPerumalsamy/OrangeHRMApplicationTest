@@ -30,14 +30,17 @@ public class EmployeeListPageTest
         loginPage.login(basePage.properties.getProperty("userName"),basePage.properties.getProperty("password"));
         dashboardPage.navigateToPIM();
         pimPage.navigateToEmployeeList();
-        Assert.assertEquals(pimPage.actualEmployeeList(),pimPage.expectedEmployeeList(),"Couldn't navigate to Employee list page");
+        Assert.assertEquals(pimPage.actualEmployeeList(),pimPage.expectedEmployeeList(),
+                "Couldn't navigate to Employee list page");
     }
 
     @Test
     public void verifySearchEmployee()
     {
-        employeeList.clickSearchButton(basePage.properties.getProperty("empName"),basePage.properties.getProperty("empID"));
-        Assert.assertEquals(employeeList.actualOutput(),employeeList.expectedOutput(),"No employee record found");
+        employeeList.clickSearchButton(basePage.properties.getProperty("empName"),
+                basePage.properties.getProperty("empID"));
+        Assert.assertEquals(employeeList.actualOutput(),employeeList.expectedOutput(),
+                "No employee record found");
     }
 
     @AfterMethod
