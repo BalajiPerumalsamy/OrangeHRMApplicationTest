@@ -6,7 +6,6 @@
 
             <class name="com.positiveTests.LoginPageTest"/>
             <class name="com.positiveTests.DashboardPageTest"/>
-
             <class name="com.positiveTests.PIMPageTest"/>
             <class name="com.positiveTests.AddEmployeePageTest"/>
             <class name="com.positiveTests.EmployeeListPageTest"/>
