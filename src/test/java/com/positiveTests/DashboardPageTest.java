@@ -1,7 +1,7 @@
 package com.positiveTests;
 
+import com.BassPage.BaseClass;
 import com.Listeners.MyListener;
-import com.orangeHRMPages.Base_Page;
 import com.orangeHRMPages.Dashboard_Page;
 import com.orangeHRMPages.Login_Page;
 import org.testng.Assert;
@@ -14,14 +14,14 @@ import org.testng.annotations.Test;
 @Listeners(MyListener.class)
 public class DashboardPageTest
 {
-    public Base_Page basePage;
+    public BaseClass basePage;
     public Login_Page loginPage;
     public Dashboard_Page dashboardPage;
 
     @BeforeMethod
     public void setUp()
     {
-        basePage=new Base_Page();
+        basePage=new BaseClass();
         basePage.navigateToApplication();
         loginPage=new Login_Page();
         loginPage.login(basePage.properties.getProperty("userName"),basePage.properties.getProperty("password"));
