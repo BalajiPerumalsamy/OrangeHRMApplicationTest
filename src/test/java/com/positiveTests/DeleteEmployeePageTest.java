@@ -1,5 +1,6 @@
 package com.positiveTests;
 
+import com.BassPage.BaseClass;
 import com.Listeners.MyListener;
 import com.orangeHRMPages.*;
 import org.testng.Assert;
@@ -12,7 +13,7 @@ import org.testng.annotations.Test;
 @Listeners(MyListener.class)
 public class DeleteEmployeePageTest
 {
-    Base_Page basePage;
+    BaseClass basePage;
     Login_Page loginPage;
     Dashboard_Page dashboardPage;
     PIM_Page pimPage;
@@ -22,7 +23,7 @@ public class DeleteEmployeePageTest
     @BeforeMethod
     public void setUp()
     {
-        basePage=new Base_Page();
+        basePage=new BaseClass();
         basePage.navigateToApplication();
         loginPage=new Login_Page();
         loginPage.login(basePage.properties.getProperty("userName"),basePage.properties.getProperty("password"));
