@@ -1,10 +1,11 @@
 package com.orangeHRMPages;
 
+import com.BassPage.BaseClass;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Dashboard_Page extends Base_Page
+public class Dashboard_Page extends BaseClass
 {
     public Dashboard_Page()
     {
