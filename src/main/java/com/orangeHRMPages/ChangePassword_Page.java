@@ -1,11 +1,12 @@
 package com.orangeHRMPages;
 
+import com.BassPage.BaseClass;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 
-public class ChangePassword_Page extends Base_Page
+public class ChangePassword_Page extends BaseClass
 {
     public ChangePassword_Page()
     {
