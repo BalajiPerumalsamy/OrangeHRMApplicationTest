@@ -1,5 +1,6 @@
 package com.positiveTests;
 
+import com.BassPage.BaseClass;
 import com.Listeners.MyListener;
 import com.orangeHRMPages.*;
 import com.utils.ExcelUtils;
@@ -10,7 +11,7 @@ import org.testng.annotations.*;
 @Listeners(MyListener.class)
 public class AddEmployeePageTest
  {
-    public Base_Page basePage;
+    public BaseClass basePage;
     public Login_Page loginPage;
     public Dashboard_Page dashboardPage;
     public PIM_Page pimPage;
@@ -19,7 +20,7 @@ public class AddEmployeePageTest
     @BeforeMethod
     public void setUp()
     {
-        basePage=new Base_Page();
+        basePage=new BaseClass();
         basePage.navigateToApplication();
         loginPage=new Login_Page();
         dashboardPage=new Dashboard_Page();
