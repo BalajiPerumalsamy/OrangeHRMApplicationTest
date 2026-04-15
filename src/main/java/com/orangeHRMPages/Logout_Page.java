@@ -1,11 +1,12 @@
 package com.orangeHRMPages;
 
+import com.BassPage.BaseClass;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.devtools.v125.page.Page;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.PageFactory;
 
-public class Logout_Page extends Base_Page
+public class Logout_Page extends BaseClass
 {
     public Logout_Page()
     {
