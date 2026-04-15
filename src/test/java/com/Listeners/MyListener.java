@@ -1,7 +1,7 @@
 package com.Listeners;
 
+import com.BassPage.BaseClass;
 import com.aventstack.extentreports.*;
-import com.orangeHRMPages.Base_Page;
 import com.reports.ReportManager;
 import org.testng.ITestContext;
 import org.testng.ITestListener;
@@ -33,7 +33,7 @@ public class MyListener implements ITestListener
     {
         String testName=result.getName();
         test.log(Status.FAIL,"Test Failed");
-        String path=Base_Page.captureScreenshot(testName);
+        String path= BaseClass.captureScreenshot(testName);
         test.fail(result.getThrowable(),MediaEntityBuilder.createScreenCaptureFromPath(path).build());
     }
 
@@ -46,7 +46,7 @@ public class MyListener implements ITestListener
             test.skip("Skip Reason : "+result.getThrowable().getMessage());
         }
 
-        String path=Base_Page.captureScreenshot(result.getName());
+        String path=BaseClass.captureScreenshot(result.getName());
         test.skip(MediaEntityBuilder.createScreenCaptureFromPath(path).build());
     }
 
