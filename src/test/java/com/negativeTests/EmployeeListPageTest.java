@@ -1,5 +1,6 @@
 package com.negativeTests;
 
+import com.BassPage.BaseClass;
 import com.Listeners.MyListener;
 import com.orangeHRMPages.*;
 import org.testng.Assert;
@@ -11,7 +12,7 @@ import org.testng.annotations.Test;
 @Listeners(MyListener.class)
 public class EmployeeListPageTest
 {
-    public Base_Page basePage;
+    public BaseClass basePage;
     public Login_Page loginPage;
     public Dashboard_Page dashboardPage;
     public PIM_Page pimPage;
@@ -20,7 +21,7 @@ public class EmployeeListPageTest
     @BeforeMethod
     public void setUp()
     {
-        basePage=new Base_Page();
+        basePage=new BaseClass();
         basePage.navigateToApplication();
         loginPage=new Login_Page();
         dashboardPage=new Dashboard_Page();
