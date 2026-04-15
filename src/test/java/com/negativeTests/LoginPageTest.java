@@ -1,7 +1,7 @@
 package com.negativeTests;
 
+import com.BassPage.BaseClass;
 import com.Listeners.MyListener;
-import com.orangeHRMPages.Base_Page;
 import com.orangeHRMPages.Login_Page;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -12,13 +12,13 @@ import org.testng.annotations.Test;
 @Listeners(MyListener.class)
 public class LoginPageTest
 {
-    public Base_Page basePage;
+    public BaseClass basePage;
     public Login_Page loginPage;
 
     @BeforeMethod
     public void setUp()
     {
-        basePage=new Base_Page();
+        basePage=new BaseClass();
         basePage.navigateToApplication();
     }
 
