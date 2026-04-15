@@ -1,7 +1,7 @@
 package com.positiveTests;
 
+import com.BassPage.BaseClass;
 import com.Listeners.MyListener;
-import com.orangeHRMPages.Base_Page;
 import com.orangeHRMPages.ChangePassword_Page;
 import com.orangeHRMPages.Login_Page;
 import org.testng.Assert;
@@ -15,7 +15,7 @@ import java.util.Properties;
 @Listeners(MyListener.class)
 public class ChangeStrongestPasswordTest
 {
-    public Base_Page basePage;
+    public BaseClass basePage;
     public Login_Page loginPage;
     public Properties properties;
     public ChangePassword_Page passwordPage;
@@ -23,7 +23,7 @@ public class ChangeStrongestPasswordTest
     @BeforeMethod
     public void setup()
     {
-        basePage=new Base_Page();
+        basePage=new BaseClass();
         basePage.navigateToApplication();
         loginPage=new Login_Page();
         loginPage.login(basePage.properties.getProperty("userName"),basePage.properties.getProperty("password"));
