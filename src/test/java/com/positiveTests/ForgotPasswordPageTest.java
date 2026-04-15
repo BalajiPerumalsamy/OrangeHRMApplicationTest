@@ -1,7 +1,7 @@
 package com.positiveTests;
 
+import com.BassPage.BaseClass;
 import com.Listeners.MyListener;
-import com.orangeHRMPages.Base_Page;
 import com.orangeHRMPages.ForgotPassword_Page;
 import org.testng.Assert;
 import org.testng.annotations.AfterMethod;
@@ -12,13 +12,13 @@ import org.testng.annotations.Test;
 @Listeners(MyListener.class)
 public class ForgotPasswordPageTest
 {
-    public Base_Page basePage;
+    public BaseClass basePage;
     public ForgotPassword_Page forgotPasswordPage;
 
     @BeforeMethod
     public void setUp()
     {
-        basePage=new Base_Page();
+        basePage=new BaseClass();
         basePage.navigateToApplication();
         forgotPasswordPage=new ForgotPassword_Page();
     }
