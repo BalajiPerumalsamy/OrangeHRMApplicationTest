@@ -20,7 +20,6 @@ public class BaseClass
     public static WebDriver driver;
     public static WebDriverWait wait;
     public Properties properties;
-
     public void navigateToApplication()
     {
         String filePath="C://Users//ELCOT//IdeaProjects//Selenium_Maven//src//main//resources//Input_Data";
