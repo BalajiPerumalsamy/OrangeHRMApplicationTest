@@ -24,5 +24,4 @@ public class Reports_Page extends BaseClass
         writeText(properties.getProperty("reportName"),report);
         clickButton(search);
     }
-
 }
