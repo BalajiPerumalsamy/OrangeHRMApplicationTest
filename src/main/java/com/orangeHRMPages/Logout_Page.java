@@ -38,6 +38,4 @@ public class Logout_Page extends BaseClass
     {
         return "Login";
     }
-
-
 }
