@@ -17,6 +17,7 @@ import java.util.Properties;
 
 public class BaseClass
 {
+
     public static WebDriver driver;
     public static WebDriverWait wait;
     public Properties properties;
