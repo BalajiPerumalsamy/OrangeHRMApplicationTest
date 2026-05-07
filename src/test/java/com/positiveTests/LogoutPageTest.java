@@ -43,4 +43,5 @@ public class LogoutPageTest
     {
         basePage.quitApplication();
     }
+
 }
