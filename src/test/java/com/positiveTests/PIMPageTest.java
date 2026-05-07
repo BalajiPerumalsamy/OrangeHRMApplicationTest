@@ -61,4 +61,5 @@ public class PIMPageTest
     {
         basePage.quitApplication();
     }
+
 }
