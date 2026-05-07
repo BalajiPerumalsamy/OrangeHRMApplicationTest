@@ -35,4 +35,5 @@ public class LoginPageTest
     {
         basePage.quitApplication();
     }
+
 }
