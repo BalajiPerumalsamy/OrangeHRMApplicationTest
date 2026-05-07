@@ -15,6 +15,7 @@ public class LoginPageTest
 {
     public BaseClass basePage;
     public Login_Page loginPage;
+
     @BeforeMethod
     public void setUp()
     {
@@ -36,4 +37,5 @@ public class LoginPageTest
     {
         basePage.quitApplication();
     }
+
 }
