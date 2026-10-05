@@ -191,5 +191,5 @@ OrangeHRMApplicationTest
 ## Author
 
 - **Name:** Balaji Perumalsamy
-- **Role:** QA Engineer (Fresher)
+- **Role:**  Junior QA Engineer 
 - **GitHub:** [BalajiPerumalsamy](https://github.com/BalajiPerumalsamy)
